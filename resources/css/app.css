@@ -2267,6 +2267,7 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
   .tl-space { display: inline; }
   .hide-tl { display: none; }
   .show-tl { display: inline; }
+  .tablet-br { display: inline; }
 
   /* Why MRK - cards 10px down */
   .why-new-list { margin-top: 10px; }
