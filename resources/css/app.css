@@ -44,6 +44,7 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
 .tl-space { display: none; }
 .ml-br { display: none; }
 .ms-br { display: none; }
+.show-tl { display: none; }
 
 /* ============= ATOMS ============= */
 .pill {
@@ -1318,24 +1319,40 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
   0%, 100% { box-shadow: 0 0 0 4px rgba(228,34,120,0.18); }
   50% { box-shadow: 0 0 0 7px rgba(228,34,120,0.0); }
 }
+/* Contact Hero Heading - Fluid Responsive Typography */
 .contact-hero h1 {
-  font-size: 192px; margin: 0; letter-spacing: -0.05em; line-height: 0.88;
-  font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800;
+  font-size: clamp(36px, 12vw, 192px);
+  margin: 0;
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  text-wrap: balance;
 }
-.contact-hero h1 .row { display: block; }
 .contact-hero h1 .accent-pebble {
-  display: inline-flex; align-items: center; justify-content: center;
-  height: 148px; padding: 0 24px;
+  display: inline;
   color: var(--accent);
-  margin: 0 14px -14px 8px; vertical-align: middle;
-  font-style: italic; font-family: 'Instrument Serif', serif; font-weight: 400;
+  font-style: italic;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
   letter-spacing: -0.02em;
 }
 .contact-hero h1 .star {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 96px; height: 96px; border-radius: 50%;
-  background: var(--accent); margin: 0 0 18px 12px; vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(28px, 6vw, 96px);
+  height: clamp(28px, 6vw, 96px);
+  border-radius: 50%;
+  background: var(--accent);
+  margin-left: clamp(4px, 1vw, 12px);
+  margin-bottom: clamp(4px, 1.2vw, 18px);
+  vertical-align: middle;
   border: 2px solid var(--ink);
+}
+.contact-hero h1 .star svg {
+  width: clamp(16px, 3vw, 40px);
+  height: clamp(16px, 3vw, 40px);
 }
 .contact-hero .hero-sub {
   margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
@@ -2240,8 +2257,6 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
   .services-hero-title .accent-pebble { height: 116px; padding: 0 32px; }
   .services-hero-title .star { width: 80px; height: 80px; }
 
-  .contact-hero h1 { font-size: 160px; }
-  .contact-hero h1 .accent-pebble { height: 124px; }
   .contact-final-cta h2 { font-size: 128px; }
   .contact-final-cta .pebble { height: 124px; padding: 0 44px; }
 }
@@ -2251,6 +2266,7 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
   .tl-br { display: inline; }
   .tl-space { display: inline; }
   .hide-tl { display: none; }
+  .show-tl { display: inline; }
 
   /* Why MRK - cards 10px down */
   .why-new-list { margin-top: 10px; }
@@ -2261,6 +2277,34 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
 
   /* Hero description - full width, no extra wrapping */
   .hero-sub p { max-width: 100%; font-size: 18px; }
+
+  /* Services Page - Ten Services section */
+  .services-detail .sec-head { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 40px; }
+  .services-detail .sec-head .right { text-align: left; max-width: 400px; }
+  .svc-row .deliv { flex-wrap: nowrap; margin-left: -62px; }
+
+  /* Services Page - Our Process section */
+  .process-band .sec-head { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 40px; }
+  .process-band .meta { text-align: left; max-width: none; white-space: nowrap; }
+
+  /* Services Page - Need something custom section */
+  .addon .pill { justify-content: center; }
+
+  /* Contact Page - heading layout */
+  .contact-hero h1 {
+    font-size: 120px;
+    max-width: 900px;
+  }
+  .contact-hero h1 .star {
+    width: 72px;
+    height: 72px;
+    margin-left: 8px;
+    margin-bottom: 12px;
+  }
+  .contact-hero h1 .star svg {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 /* ============= TABLET LANDSCAPE (1024px - 1279px) ============= */
@@ -2385,9 +2429,6 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
   .services-final-cta h2 { font-size: 120px; }
 
   /* Contact Page */
-  .contact-hero h1 { font-size: 128px; }
-  .contact-hero h1 .accent-pebble { height: 100px; }
-  .contact-hero h1 .star { width: 72px; height: 72px; }
   .contact-hero .hero-sub { gap: 40px; }
   .contact-hero .hero-sub p { font-size: 20px; }
   .form-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -2664,9 +2705,6 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
   /* Contact Page */
   .contact-hero { padding-top: 40px; padding-bottom: 24px; }
   .contact-hero .hero-meta { flex-direction: column; align-items: flex-start; gap: 16px; padding-bottom: 20px; margin-bottom: 32px; }
-  .contact-hero h1 { font-size: 56px; }
-  .contact-hero h1 .accent-pebble { height: 48px; padding: 0 12px; font-size: 0.95em; margin: 0 6px -6px 4px; }
-  .contact-hero h1 .star { width: 44px; height: 44px; margin: 0 0 10px 8px; }
   .contact-hero .hero-sub { grid-template-columns: 1fr; gap: 28px; margin-top: 32px; }
   .contact-hero .hero-sub p { font-size: 18px; }
   .contact-hero .hero-sub .right { text-align: left; }
@@ -2852,9 +2890,6 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
   .services-final-cta h2 { font-size: 40px; }
 
   /* Contact Page */
-  .contact-hero h1 { font-size: 40px; }
-  .contact-hero h1 .accent-pebble { height: 36px; padding: 0 10px; font-size: 0.9em; margin: 0 4px -4px 2px; }
-  .contact-hero h1 .star { width: 32px; height: 32px; margin: 0 0 6px 4px; }
   .contact-hero .hero-sub p { font-size: 16px; }
   .contact-hero .hero-sub .right .num { font-size: 32px; }
   .form-aside h2 { font-size: 32px; }
@@ -3097,10 +3132,6 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
   /* Contact Page */
   .contact-hero { padding-top: 32px; padding-bottom: 20px; }
   .contact-hero .hero-meta-left .eyebrow { font-size: 11px; padding: 8px 12px 8px 10px; }
-  .contact-hero h1 { font-size: 32px; }
-  .contact-hero h1 .row { white-space: normal; }
-  .contact-hero h1 .accent-pebble { height: 28px; padding: 0 8px; font-size: 0.85em; }
-  .contact-hero h1 .star { width: 24px; height: 24px; margin: 0 0 4px 3px; }
   .contact-hero .hero-sub { margin-top: 24px; }
   .contact-hero .hero-sub p { font-size: 15px; }
   .contact-hero .hero-sub .right .num { font-size: 28px; }

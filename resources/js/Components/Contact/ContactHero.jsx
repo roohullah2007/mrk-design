@@ -20,11 +20,8 @@ export default function ContactHero() {
                 </div>
 
                 <h1 className="display">
-                    <span className="row" style={{ fontSize: '170px' }}>Let's build</span>
-                    <span className="row" style={{ fontSize: '170px' }}>something <span className="accent-pebble">great</span></span>
-                    <span className="row" style={{ fontSize: '170px' }}>together<span className="star">
-                        <StarIcon />
-                    </span></span>
+                    Let's build something <br className="tablet-br" />
+                    <span className="accent-pebble">great</span> together<span className="star"><StarIcon /></span>
                 </h1>
 
                 <div className="hero-sub">

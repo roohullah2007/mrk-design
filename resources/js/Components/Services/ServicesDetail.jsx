@@ -86,7 +86,7 @@ export default function ServicesDetail() {
                         <div className="eyebrow" style={{ marginBottom: '24px' }}>Ten services</div>
                         <h2>Pick a line, or <em>pick them all.</em></h2>
                     </div>
-                    <div className="right">Every line below is its own engagement — or you can bundle them into a package. We'll recommend a scope on the intro call.</div>
+                    <div className="right">Every line below is its own engagement — or you can<br className="tl-br" /> bundle them into a package. We'll recommend a scope<br className="tl-br" /> on the intro call.</div>
                 </div>
 
                 {services.map((service, index) => (
