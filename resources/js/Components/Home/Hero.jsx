@@ -65,19 +65,20 @@ export default function Hero() {
                 <div className="hero-sub">
                     <div>
                         <div className="eyebrow" style={{ marginBottom: '16px', fontFamily: '"Inter Tight"', fontSize: '16px', borderStyle: 'solid' }}>What we do</div>
-                        <p style={{ fontWeight: 400, fontSize: '18px' }}>MRK is a full-service creative agency — UI/UX, branding, websites, ecommerce, video, SEO, and digital marketing. One team that designs, ships, and grows the work.</p>
+                        <p style={{ fontWeight: 400, fontSize: '18px' }}>MRK is a full-service creative agency —<br className="ms-br" /> UI/UX, branding, websites,<br className="ml-br" /> ecommerce,<br className="ms-br" /> video, SEO,<br className="tablet-br tl-br" /> and digital marketing. One<br className="ms-br" /> team that<br className="ml-br" /> designs, ships, and grows<br className="ms-br" /> the work.</p>
                     </div>
-                    <div className="hero-ctas">
-                        <a href="#contact" className="pill primary" style={{ fontSize: '18px' }}>
-                            Get a free consultation
-                            <span className="arrow"><ArrowIcon /></span>
-                        </a>
-                        <a href="#work" className="pill ghost" style={{ fontSize: '18px' }}>
-                            View our work
-                            <span className="arrow"><DownArrowIcon /></span>
-                        </a>
-                    </div>
-                    <div className="hero-meta-block">
+                    <div className="hero-bottom-row">
+                        <div className="hero-ctas">
+                            <a href="#contact" className="pill primary" style={{ fontSize: '18px' }}>
+                                Get a free consultation
+                                <span className="arrow"><ArrowIcon /></span>
+                            </a>
+                            <a href="#work" className="pill ghost" style={{ fontSize: '18px' }}>
+                                View our work
+                                <span className="arrow"><DownArrowIcon /></span>
+                            </a>
+                        </div>
+                        <div className="hero-meta-block">
                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                             <div className="avatars">
                                 <img className="av" src="/images/avatar-1.jpg" alt="" />
@@ -97,6 +98,7 @@ export default function Hero() {
                             </div>
                             <div className="mono" style={{ fontSize: '14px', color: 'var(--muted)', marginTop: '4px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>★★★★★&nbsp; &nbsp;5 star reviews</div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

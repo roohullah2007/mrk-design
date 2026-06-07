@@ -40,7 +40,7 @@ export default function Footer({ dark = false }) {
         <footer className={`footer${dark ? ' dark' : ''}`}>
             <div className="container">
                 <div className="footer-grid">
-                    <div>
+                    <div className="footer-brand">
                         <Link href="/" preserveScroll={false} className="logo" aria-label="MRK Design Agency">
                             <div className="logo-img" style={{
                                 fontFamily: "'Bricolage Grotesque', sans-serif",
@@ -52,13 +52,15 @@ export default function Footer({ dark = false }) {
                                 MRK
                             </div>
                         </Link>
-                        <p style={{ fontSize: '16px' }}>A full-service creative agency — brand, web, ecommerce, video, and marketing under one roof.</p>
-                        <div className="socials">
-                            <a href="#" aria-label="Facebook"><FacebookIcon /></a>
-                            <a href="https://www.instagram.com/mrkdesignagency/" target="_blank" rel="noopener" aria-label="Instagram"><InstagramIcon /></a>
-                            <a href="#" aria-label="LinkedIn"><LinkedInIcon /></a>
-                            <a href="#" aria-label="Threads"><ThreadsIcon /></a>
-                            <a href="#" aria-label="YouTube"><YouTubeIcon /></a>
+                        <div className="footer-desc-row">
+                            <p style={{ fontSize: '16px' }}>A full-service creative agency — brand, web, ecommerce, video, and marketing under one roof.</p>
+                            <div className="socials">
+                                <a href="#" aria-label="Facebook"><FacebookIcon /></a>
+                                <a href="https://www.instagram.com/mrkdesignagency/" target="_blank" rel="noopener" aria-label="Instagram"><InstagramIcon /></a>
+                                <a href="#" aria-label="LinkedIn"><LinkedInIcon /></a>
+                                <a href="#" aria-label="Threads"><ThreadsIcon /></a>
+                                <a href="#" aria-label="YouTube"><YouTubeIcon /></a>
+                            </div>
                         </div>
                     </div>
                     <div className="footer-col">
@@ -93,7 +95,7 @@ export default function Footer({ dark = false }) {
                 <div className="footer-bottom">
                     <div className="footer-mark">MRK®</div>
                     <div className="footer-meta">
-                        <span style={{ fontSize: '16px' }}>© 2026 MRK DESIGN AGENCY · ALL RIGHTS RESERVED</span>
+                        <span style={{ fontSize: '16px' }}>© 2026 MRK DESIGN AGENCY<br className="ms-br" /> ALL RIGHTS RESERVED</span>
                         <span style={{ fontSize: '14px' }}>PRIVACY · TERMS · COOKIES</span>
                     </div>
                 </div>

@@ -4,12 +4,11 @@ export default function About() {
             <div className="container about-grid">
                 <div>
                     <div className="eyebrow" style={{ marginBottom: '24px', fontFamily: '"Inter Tight"' }}>Who we are</div>
-                    <h2 className="display">Great design is more than <span className="serif-italic" style={{ fontSize: '100px' }}>aesthetics.</span></h2>
-                    <div className="about-tags">
+                    <h2 className="display">Great design is more than <span className="heading-row-2"><span className="serif-italic" style={{ fontSize: '100px' }}>aesthetics.</span><span className="about-tags">
                         <span className="tag" style={{ fontSize: '14px' }}>★ Clarity</span>
                         <span className="tag" style={{ fontSize: '14px' }}>★ Usability</span>
                         <span className="tag accent" style={{ fontSize: '14px' }}>★ Impact</span>
-                    </div>
+                    </span></span></h2>
                 </div>
                 <div className="about-right">
                     <p className="about-lead">We're a full-service creative partner — design, build, and grow your brand under one roof, from first idea to shipped product to performing campaign.</p>

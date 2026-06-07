@@ -37,7 +37,7 @@ export default function Outcomes() {
             <div className="container">
                 <div className="outcomes-head">
                     <div className="eyebrow">OUTCOMES</div>
-                    <h2>How a website becomes your <span className="it">most</span><br /><span className="it">valuable</span> team-mate.</h2>
+                    <h2>How a website<br />becomes your <span className="it">most</span><br /><span className="it">valuable</span> team-mate.</h2>
                     <p className="sub">If your current site feels invisible, isn't converting, or you're tired of wrestling with tech and endless updates — we've got you covered.</p>
                 </div>
                 <div className="outcomes-grid">

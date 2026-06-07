@@ -33,12 +33,14 @@ export default function WhyMRK() {
             <div className="container why-new-grid">
                 <div className="why-new-left">
                     <div className="eyebrow">WHY MRK</div>
-                    <h2>The studio your team will <span className="it">actually</span><br /><span className="it">like</span> working with.</h2>
-                    <p className="lede">Most agencies sell pixels; we sell outcomes. We work in your tools, on your cadence, and we stay until the work performs.</p>
-                    <a href="#contact" className="pill primary">
-                        Book a free call
-                        <span className="arrow"><ArrowIcon /></span>
-                    </a>
+                    <h2>The studio<br className="tl-br" /> your team will<br className="tl-br" /> <span className="it">actually</span><br className="hide-tl" /><span className="tl-space"> </span><span className="it">like</span><br className="tl-br" /> working with.</h2>
+                    <div className="why-lede-row">
+                        <p className="lede">Most agencies sell pixels; we sell outcomes. We work in your tools, on your cadence, and we stay until the work performs.</p>
+                        <a href="#contact" className="pill primary">
+                            Book a free call
+                            <span className="arrow"><ArrowIcon /></span>
+                        </a>
+                    </div>
                 </div>
                 <div className="why-new-list">
                     {reasons.map((reason, index) => (

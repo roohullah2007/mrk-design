@@ -13,7 +13,7 @@ const ArrowIcon = () => (
 const packages = [
     {
         duration: "3–4 WEEKS · FIXED PRICE",
-        title: "Brand &\nLaunch Kit",
+        title: "Brand & Launch Kit",
         price: "Custom quote",
         priceNote: "Scoped to your goals",
         description: "For new businesses ready to show up properly. A complete identity plus a clean, fast site to launch on.",
@@ -28,7 +28,7 @@ const packages = [
     },
     {
         duration: "6–8 WEEKS · MOST BOOKED",
-        title: "Brand, Web\n& Growth",
+        title: "Brand, Web & Growth",
         price: "Custom quote",
         priceNote: "Scoped to your goals",
         description: "For businesses ready to scale. Brand refresh, full website, and a 90-day marketing kickoff under one roof.",
@@ -45,7 +45,7 @@ const packages = [
     },
     {
         duration: "5–7 WEEKS · FIXED PRICE",
-        title: "Ecommerce\n+ Growth",
+        title: "Ecommerce + Growth",
         price: "Custom quote",
         priceNote: "Scoped to your goals",
         description: "For DTC brands ready to sell. Shopify storefront, brand polish, and 60 days of ads + email to turn traffic into orders.",
@@ -67,7 +67,7 @@ export default function Engagements() {
                 <div className="engagements-head">
                     <div className="eyebrow">ENGAGEMENTS</div>
                     <h2>End-to-end<br /><span style={{ whiteSpace: 'nowrap' }}>packages, <span className="it">flat priced.</span></span></h2>
-                    <p className="sub">Three of our most-booked engagements. Custom retainer? We do those too — just ask.</p>
+                    <p className="sub">Three of our most-booked engagements. Custom retainer? We do<br className="ml-br" /> those too — just ask.</p>
                 </div>
                 <div className="pack-grid">
                     {packages.map((pkg, index) => (
@@ -80,18 +80,20 @@ export default function Engagements() {
                                 <div className="starts">{pkg.priceNote}</div>
                             </div>
                             <p className={`desc ${!pkg.dark ? 'dark-on-light' : ''}`}>{pkg.description}</p>
-                            <ul>
-                                {pkg.features.map((feature, featureIndex) => (
-                                    <li key={featureIndex}>
-                                        <span className="check"><CheckIcon /></span>
-                                        {feature}
-                                    </li>
-                                ))}
-                            </ul>
-                            <a href="#contact" className="cta">
-                                Get an estimate
-                                <span className="arrow"><ArrowIcon /></span>
-                            </a>
+                            <div className="pack-bottom">
+                                <ul>
+                                    {pkg.features.map((feature, featureIndex) => (
+                                        <li key={featureIndex}>
+                                            <span className="check"><CheckIcon /></span>
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <a href="#contact" className="cta">
+                                    Get an estimate
+                                    <span className="arrow"><ArrowIcon /></span>
+                                </a>
+                            </div>
                         </div>
                     ))}
                 </div>

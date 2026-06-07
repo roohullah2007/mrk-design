@@ -88,7 +88,7 @@ export default function Services() {
                 <div className="sec-head">
                     <div>
                         <div className="eyebrow" style={{ marginBottom: '24px', fontFamily: '"Inter Tight"' }}>What we offer</div>
-                        <h2>Ten ways we make brands <span className="serif-italic">unmissable</span>.</h2>
+                        <h2>Ten ways we<br />make brands<br /><span className="serif-italic">unmissable</span>.</h2>
                     </div>
                     <div className="sub" style={{ fontSize: '18px' }}>End-to-end creative and growth services — strategy, brand, design, development, video, and marketing under one roof.</div>
                 </div>
