@@ -37,7 +37,7 @@ const services = [
     },
     {
         num: "05",
-        title: "Custom-Coded Sites",
+        title: "Custom Sites",
         description: "High-performance sites on modern stacks. Speed, flexibility, and scale with no compromises. Built to grow with your product, not against it.",
         tags: ["Next.js", "Astro"],
         moreTags: "Headless CMS · Vercel"
@@ -51,7 +51,7 @@ const services = [
     },
     {
         num: "07",
-        title: "Funnels & Landing",
+        title: "Funnels",
         description: "Conversion-focused funnels that move people from awareness to action. No friction, no fluff, no dead ends. Built around the offer and the audience.",
         tags: ["Lead gen", "Sales"],
         moreTags: "GHL · Webinar",

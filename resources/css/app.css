@@ -655,7 +655,7 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
 }
 .process .meta { font-family: 'DM Sans', sans-serif; font-size: 16px; color: rgba(245,240,232,.6); text-align: right; max-width: 220px; }
 .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.15); }
-.process-step { padding: 40px 24px 32px; display: grid; grid-template-rows: auto 1fr auto auto; gap: 16px; border-right: 1px solid rgba(255,255,255,.15); }
+.process-step { padding: 40px 24px 32px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 16px; border-right: 1px solid rgba(255,255,255,.15); }
 .process-step:last-child { border-right: none; }
 .process-step .top { display: flex; justify-content: space-between; align-items: center; }
 .process-step .step-no { font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--accent); letter-spacing: 0.12em; }
@@ -666,7 +666,7 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
   display: inline-flex; align-items: center; justify-content: center;
 }
 .process-step.first .circle { background: var(--accent); border: none; color: #fff; }
-.process-step h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 64px; margin: 0; letter-spacing: -0.03em; line-height: 0.92; color: var(--bg); align-self: end; }
+.process-step h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 64px; margin: 0; letter-spacing: -0.03em; line-height: 0.92; color: var(--bg); }
 .process-step p { font-size: 16px; line-height: 1.55; margin: 0; color: rgba(245,240,232,.7); }
 .pkw { display: flex; flex-wrap: wrap; gap: 6px; }
 .pkw span {
