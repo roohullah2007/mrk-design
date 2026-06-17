@@ -55,11 +55,9 @@ export default function Footer({ dark = false }) {
                         <div className="footer-desc-row">
                             <p style={{ fontSize: '16px' }}>A full-service creative agency — brand, web, ecommerce, video, and marketing under one roof.</p>
                             <div className="socials">
-                                <a href="#" aria-label="Facebook"><FacebookIcon /></a>
+                                <a href="https://www.facebook.com/profile.php?id=61578080612450" target="_blank" rel="noopener" aria-label="Facebook"><FacebookIcon /></a>
                                 <a href="https://www.instagram.com/mrkdesignagency/" target="_blank" rel="noopener" aria-label="Instagram"><InstagramIcon /></a>
-                                <a href="#" aria-label="LinkedIn"><LinkedInIcon /></a>
-                                <a href="#" aria-label="Threads"><ThreadsIcon /></a>
-                                <a href="#" aria-label="YouTube"><YouTubeIcon /></a>
+                                <a href="https://www.linkedin.com/company/mrk-design-agency/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn"><LinkedInIcon /></a>
                             </div>
                         </div>
                     </div>

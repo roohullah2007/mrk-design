@@ -1,5 +1,3 @@
-import { Link } from '@inertiajs/react';
-
 const InstagramIcon = () => (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="5"/>
@@ -94,14 +92,14 @@ export default function Instagram() {
 
                 <div className="insta-grid">
                     {posts.map((post, index) => (
-                        <Link href="/" preserveScroll={false} className={`ig-post ${post.theme}`} key={index}>
+                        <a href="https://www.instagram.com/mrkdesignagency/" target="_blank" rel="noopener" className={`ig-post ${post.theme}`} key={index}>
                             <div className="ig-meta" style={post.theme.includes('dark') ? { opacity: post.theme.includes('accent') ? 0.85 : 0.6 } : {}}>{post.meta}</div>
                             <h3 className="ig-title">{post.title} <em>{post.titleEm}</em>{post.titleEnd}</h3>
                             <div className="ig-stats" style={post.theme.includes('dark') && !post.theme.includes('accent') ? { opacity: 0.7 } : post.theme.includes('accent') ? { opacity: 0.85 } : {}}>
                                 <span>♡ {post.stats.likes}</span>
                                 <span>✎ {post.stats.comments}</span>
                             </div>
-                        </Link>
+                        </a>
                     ))}
                 </div>
             </div>
