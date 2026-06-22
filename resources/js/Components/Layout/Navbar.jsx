@@ -52,20 +52,12 @@ export default function Navbar() {
         <header className="nav">
             <div className="container nav-inner">
                 <Link href="/" preserveScroll={false} className="logo" aria-label="MRK Design Agency">
-                    <div className="logo-img" style={{
-                        fontFamily: "'Bricolage Grotesque', sans-serif",
-                        fontWeight: 800,
-                        fontSize: '32px',
-                        letterSpacing: '-0.03em',
-                        color: 'var(--accent)'
-                    }}>
-                        MRK
-                    </div>
+                    <img src="/images/Website Navbar Logo.png" alt="MRK Design Agency" className="logo-img" style={{ height: '46px' }} />
                 </Link>
 
                 {/* Desktop Navigation */}
                 <nav className="nav-pill nav-desktop">
-                    <a href={isHome ? "#work" : "/#work"} className={isHome ? "active" : ""}>Work</a>
+                    <Link href="/" preserveScroll={false} className={isHome ? "active" : ""}>Home</Link>
                     <Link href="/services" preserveScroll={false} className={isServices ? "active" : ""}>Services</Link>
                     <Link href="/blog" preserveScroll={false} className={isBlog ? "active" : ""}>Blog</Link>
                     <a href={isHome ? "#testimonials" : "/#testimonials"}>Testimonials</a>
@@ -73,11 +65,8 @@ export default function Navbar() {
                 </nav>
 
                 <div className="nav-right">
-                    <Link href="/contact" preserveScroll={false} className="pill primary sm nav-cta-desktop" style={{ fontSize: '16px', height: '52px', padding: '0 8px 0 22px' }}>
-                        Book a call
-                        <span className="arrow" style={{ width: '36px', height: '36px' }}>
-                            <ArrowIcon />
-                        </span>
+                    <Link href="/contact" preserveScroll={false} className="pill primary sm nav-cta-desktop" style={{ fontSize: '16px', height: '52px', padding: '0 22px' }}>
+                        Start a project
                     </Link>
 
                     {/* Mobile Menu Toggle */}
@@ -95,17 +84,14 @@ export default function Navbar() {
             {/* Mobile Navigation Menu */}
             <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
                 <nav className="mobile-nav">
-                    <a href={isHome ? "#work" : "/#work"} className={isHome ? "active" : ""} onClick={handleLinkClick}>Work</a>
+                    <Link href="/" preserveScroll={false} className={isHome ? "active" : ""} onClick={handleLinkClick}>Home</Link>
                     <Link href="/services" preserveScroll={false} className={isServices ? "active" : ""} onClick={handleLinkClick}>Services</Link>
                     <Link href="/blog" preserveScroll={false} className={isBlog ? "active" : ""} onClick={handleLinkClick}>Blog</Link>
                     <a href={isHome ? "#testimonials" : "/#testimonials"} onClick={handleLinkClick}>Testimonials</a>
                     <Link href="/contact" preserveScroll={false} className={isContact ? "active" : ""} onClick={handleLinkClick}>Contact</Link>
                 </nav>
                 <Link href="/contact" preserveScroll={false} className="pill primary mobile-cta" onClick={handleLinkClick}>
-                    Book a call
-                    <span className="arrow">
-                        <ArrowIcon />
-                    </span>
+                    Start a project
                 </Link>
             </div>
         </header>

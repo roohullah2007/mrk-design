@@ -9,13 +9,19 @@ const ArrowIcon = () => (
 export default function FinalCTA() {
     return (
         <section className="final-cta" id="contact">
+            <iframe
+                className="cta-video"
+                src="https://www.youtube.com/embed/C3j-v2uIilo?autoplay=1&mute=1&loop=1&playlist=C3j-v2uIilo&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&start=0"
+                title=""
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+            ></iframe>
+            <div className="cta-overlay"></div>
             <div className="container">
                 <div className="inner">
                     <div className="eyebrow" style={{ fontFamily: '"Inter Tight"' }}>LET'S BUILD</div>
-                    <h2>Ready to build a</h2>
-                    <h2><span className="it">strong</span> digital</h2>
-                    <h2>presence?</h2>
-                    <p>Let's turn your ideas into impactful designs that elevate your brand and drive results.</p>
+                    <h2>Ready to build a <span className="it">strong</span> digital<br /> presence?</h2>
+                    <p>Let's turn your ideas into impactful designs that elevate your<br /> brand and drive results.</p>
                     <div className="final-cta-ctas">
                         <Link href="/contact" preserveScroll={false} className="pill primary">
                             Start your project

@@ -6,13 +6,8 @@ import ContactServices from '@/Components/Contact/ContactServices';
 import WhyMRK from '@/Components/Contact/WhyMRK';
 import ContactCTA from '@/Components/Contact/ContactCTA';
 import WhatsAppBubble from '@/Components/Contact/WhatsAppBubble';
-import { useEffect } from 'react';
 
 export default function Contact() {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     return (
         <MainLayout darkFooter={true}>
             <ContactHero />

@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 const testimonials = [
     {
-        quote: "They didn't just redesign our app — they redesigned how we think about our customer.",
+        quote: "They didn't just redesign our app they redesigned how we think about our customer.",
         name: "Priya Anand",
         role: "Co-founder, Haven",
         initials: "PA",
@@ -16,7 +16,7 @@ const testimonials = [
         theme: "cream"
     },
     {
-        quote: "Strategic, fast, and unreasonably detailed. They feel like part of our team — not vendors.",
+        quote: "Strategic, fast, and unreasonably detailed. They feel like part of our team not vendors.",
         name: "Dani Fernandez",
         role: "Head of Brand, Verda",
         initials: "DF",
@@ -44,7 +44,7 @@ const testimonials = [
         theme: "dark"
     },
     {
-        quote: "They rebuilt our brand and SEO from scratch — qualified leads are up 3× and the team finally has a system to work in.",
+        quote: "They rebuilt our brand and SEO from scratch qualified leads are up 3× and the team finally has a system to work in.",
         name: "Sara Nawaz",
         role: "Marketing Lead, Halo Labs",
         initials: "SN",
@@ -58,7 +58,7 @@ const testimonials = [
         theme: "cream"
     },
     {
-        quote: "Our Shopify rebuild lifted conversion 41% in eight weeks. MRK doesn't sell promises — they ship outcomes.",
+        quote: "Our Shopify rebuild lifted conversion 41% in eight weeks. MRK doesn't sell promises they ship outcomes.",
         name: "Elena Voss",
         role: "Founder, Field & Folk",
         initials: "EV",
@@ -86,12 +86,11 @@ export default function Testimonials() {
             <div className="container">
                 <div className="sec-head">
                     <div>
-                        <div className="eyebrow" style={{ marginBottom: '24px', fontFamily: '"Inter Tight"' }}>KIND WORDS</div>
+                        <div className="eyebrow" style={{ marginBottom: '24px', fontFamily: '"Inter Tight"' }}>Testimonials</div>
                         <h2>Stuff our clients <span className="serif-italic">said.</span></h2>
                     </div>
                     <div className="badges">
-                        <span className="b1" style={{ fontSize: '16px' }}>★ 4.9 / 5 — CLUTCH</span>
-                        <span className="b2" style={{ fontSize: '16px' }}>84 reviews</span>
+                        <span className="b1" style={{ fontSize: '16px' }}>★ 4.9 / 5 CLUTCH</span>
                     </div>
                 </div>
                 <div className="quotes-wrap">

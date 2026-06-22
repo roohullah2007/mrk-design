@@ -7,7 +7,9 @@
       "Bash(git stash:*)",
       "Bash(git push:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(awk -F: '$1>2550 && $1<2820')",
+      "WebFetch(domain:www.magnific.com)"
     ]
   }
 }

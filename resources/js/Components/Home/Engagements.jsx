@@ -65,9 +65,8 @@ export default function Engagements() {
         <section className="engagements">
             <div className="container">
                 <div className="engagements-head">
-                    <div className="eyebrow">ENGAGEMENTS</div>
                     <h2>End-to-end<br /><span style={{ whiteSpace: 'nowrap' }}>packages, <span className="it">flat priced.</span></span></h2>
-                    <p className="sub">Three of our most-booked engagements. Custom retainer? We do<br className="ml-br" /> those too — just ask.</p>
+                    <p className="sub">Three of our most-booked engagements. Custom retainer? We do<br className="ml-br" /> those too just ask.</p>
                 </div>
                 <div className="pack-grid">
                     {packages.map((pkg, index) => (

@@ -1,32 +1,26 @@
+import { Link } from '@inertiajs/react';
+
+const ArrowIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+        <path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
 export default function About() {
     return (
         <section className="about" id="about">
             <div className="container about-grid">
-                <div>
-                    <div className="eyebrow" style={{ marginBottom: '24px', fontFamily: '"Inter Tight"' }}>Who we are</div>
-                    <h2 className="display">Great design is more than <span className="heading-row-2"><span className="serif-italic" style={{ fontSize: '100px' }}>aesthetics.</span><span className="about-tags">
-                        <span className="tag" style={{ fontSize: '14px' }}>★ Clarity</span>
-                        <span className="tag" style={{ fontSize: '14px' }}>★ Usability</span>
-                        <span className="tag accent" style={{ fontSize: '14px' }}>★ Impact</span>
-                    </span></span></h2>
+                <div className="about-media">
+                    <img src="/images/Laptop Image.png" alt="MRK design work on a laptop" className="about-img" />
                 </div>
                 <div className="about-right">
-                    <p className="about-lead">We're a full-service creative partner — design, build, and grow your brand under one roof, from first idea to shipped product to performing campaign.</p>
-                    <p className="about-body" style={{ fontSize: '18px' }}>Whether you need a new identity, a high-converting site, a Shopify store, a launch funnel, content that performs, or paid media that actually returns — you don't have to chain three agencies together. We handle the whole pipeline so the work stays on-brand and on-strategy from concept to revenue.</p>
-                    <div className="about-stats">
-                        <div className="stat">
-                            <div className="num">120+</div>
-                            <div className="lbl" style={{ fontSize: '14px' }}>Projects done</div>
-                        </div>
-                        <div className="stat">
-                            <div className="num">38</div>
-                            <div className="lbl" style={{ fontSize: '14px' }}>Active brands</div>
-                        </div>
-                        <div className="stat">
-                            <div className="num">5 years</div>
-                            <div className="lbl" style={{ fontSize: '14px' }}>experience</div>
-                        </div>
-                    </div>
+                    <h2 className="display">Great design is<br /> more than <span className="serif-italic" style={{ fontSize: '78px' }}>aesthetics.</span></h2>
+                    <p className="about-lead">We're a full-service creative partner — design, build, and grow<br />your brand under one roof, from first idea to shipped product to<br /> performing campaign.</p>
+                    <p className="about-body" style={{ fontSize: '18px' }}>Whether you need a new identity, a high-converting site, a <br />launch funnel, content that performs, or paid media that actually returns — you <br />don't have to chain three agencies together. We handle the whole pipeline so<br /> the work stays on-brand and on-strategy from concept to revenue.</p>
+                    <Link href="/contact" preserveScroll={false} className="pill primary about-cta">
+                        Start a Project
+                        <span className="arrow"><ArrowIcon /></span>
+                    </Link>
                 </div>
             </div>
         </section>

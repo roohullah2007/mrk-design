@@ -19,6 +19,7 @@ const services = [
         description: "Distinctive identities that communicate your values. Logos, type systems, full visual languages.",
         tags: ["Logo", "Guidelines", "Strategy"],
         big: true,
+        tight: true,
         theme: "theme-lime"
     },
     {
@@ -74,9 +75,10 @@ const services = [
     {
         num: "10",
         title: "Digital Marketing",
-        description: "Paid social, search, and email — wired to a real funnel. Creative, copy, and reporting under one roof. We chase ROAS, not vanity.",
+        description: "Paid social, search, and email wired to a real funnel. Creative, copy, and reporting under one roof. We chase ROAS, not vanity.",
         tags: ["Meta Ads", "Google"],
         moreTags: "Email · CRO",
+        tight: true,
         theme: "theme-ink"
     }
 ];
@@ -88,9 +90,9 @@ export default function Services() {
                 <div className="sec-head">
                     <div>
                         <div className="eyebrow" style={{ marginBottom: '24px', fontFamily: '"Inter Tight"' }}>What we offer</div>
-                        <h2>Ten ways we<br />make brands<br /><span className="serif-italic">unmissable</span>.</h2>
+                        <h2>Ten ways we make <span className="serif-italic" style={{ color: 'var(--accent)' }}>brands unmissable</span></h2>
                     </div>
-                    <div className="sub" style={{ fontSize: '18px' }}>End-to-end creative and growth services — strategy, brand, design, development, video, and marketing under one roof.</div>
+                    <div className="sub" style={{ fontSize: '18px' }}>End-to-end creative and growth services strategy, brand, design,<br /> development, video, and marketing under one roof.</div>
                 </div>
                 <div className="services-grid">
                     {services.map((service, index) => (
@@ -99,10 +101,10 @@ export default function Services() {
                             key={index}
                         >
                             <div className="service-head">
-                                <span className="service-num">SERVICE — {service.num}</span>
+                                <span className="service-num">SERVICE {service.num}</span>
                                 <span className="service-arrow"><ArrowIcon /></span>
                             </div>
-                            <h3>{service.title}</h3>
+                            <h3 className={service.tight ? 'tight' : ''}>{service.title}</h3>
                             <p>{service.description}</p>
                             <div className="service-tags">
                                 {service.tags.map((tag, tagIndex) => (

@@ -41,11 +41,15 @@ export default function Hero() {
                 <div className="hero-cta-section">
                     <a href="/contact" className="pill primary hero-main-cta">
                         Book a free discovery call
-                        <span className="arrow"><ArrowIcon /></span>
                     </a>
                     <div className="hero-rating">
-                        <span className="stars">★★★★★</span>
-                        <span className="rating-text">Rated 5 Star On Google</span>
+                        <div className="rating-avatars">
+                            <img src="/images/avatar-1.jpg" alt="" />
+                            <img src="/images/avatar-2.jpg" alt="" />
+                            <img src="/images/avatar-3.jpg" alt="" />
+                            <img src="/images/avatar-4.jpg" alt="" />
+                        </div>
+                        <span className="rating-text">4.9/5 satisfaction rating</span>
                     </div>
                 </div>
 

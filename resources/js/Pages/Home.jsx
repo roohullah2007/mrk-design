@@ -9,19 +9,16 @@ import Portfolio from '@/Components/Home/Portfolio';
 import Upgrade from '@/Components/Home/Upgrade';
 import WhyMRK from '@/Components/Home/WhyMRK';
 import Engagements from '@/Components/Home/Engagements';
+import ImageBanner from '@/Components/Home/ImageBanner';
 import Testimonials from '@/Components/Home/Testimonials';
+import ImageSlider from '@/Components/Home/ImageSlider';
 import FAQ from '@/Components/Home/FAQ';
 import Instagram from '@/Components/Home/Instagram';
 import FinalCTA from '@/Components/Home/FinalCTA';
 import WhatsAppBubble from '@/Components/Home/WhatsAppBubble';
 import { Head } from '@inertiajs/react';
-import { useEffect } from 'react';
 
 export default function Home() {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     return (
         <MainLayout>
             <Head title="MRK Design Agency" />
@@ -30,12 +27,14 @@ export default function Home() {
             <About />
             <Outcomes />
             <Services />
-            <Process />
             <Portfolio />
-            <Upgrade />
-            <WhyMRK />
             <Engagements />
+            <Upgrade />
+            <ImageBanner />
+            <Process />
+            <WhyMRK />
             <Testimonials />
+            <ImageSlider />
             <FAQ />
             <Instagram />
             <FinalCTA />

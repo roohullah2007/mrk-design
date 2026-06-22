@@ -15,13 +15,13 @@ const steps = [
     {
         num: "03",
         title: "Build",
-        description: "Design, develop, write, shoot — whatever the project needs. Senior team, end to end, no juniors hidden in the work.",
+        description: "Design, develop, write, shoot whatever the project needs. Senior team, end to end, no juniors hidden in the work.",
         keywords: ["Design", "Develop", "Ship", "Test"]
     },
     {
         num: "04",
         title: "Grow",
-        description: "Launch, measure, iterate. We tune the work based on real numbers — and stick around to keep it performing.",
+        description: "Launch, measure, iterate. We tune the work based on real numbers and stick around to keep it performing.",
         keywords: ["Launch", "Measure", "Iterate"]
     }
 ];
@@ -33,7 +33,7 @@ export default function Process() {
                 <div className="sec-head">
                     <div>
                         <div className="eyebrow" style={{ marginBottom: '24px', fontFamily: '"Inter Tight"' }}>Our process</div>
-                        <h2>From <span className="serif-italic" style={{ color: 'var(--accent)' }}>first call</span> to growth.</h2>
+                        <h2>From <span className="serif-italic" style={{ color: 'var(--accent)' }}>first call</span><br /> to growth.</h2>
                     </div>
                     <div className="meta"></div>
                 </div>

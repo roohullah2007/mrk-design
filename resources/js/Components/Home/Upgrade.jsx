@@ -37,7 +37,7 @@ export default function Upgrade() {
             <div className="container">
                 <div className="upgrade-head">
                     <h2>Is it time to <span className="it">level up</span> your business?</h2>
-                    <p className="sub">Six signs we hear most from the founders we end up working with. If any feel familiar — brand, web, content, marketing, or otherwise — let's talk.</p>
+                    <p className="sub">Six signs we hear most from the founders we end up working with. If<br /> any feel familiar brand, web, content, marketing, or otherwise let's talk.</p>
                 </div>
                 <div className="upgrade-grid">
                     {upgradeReasons.map((reason, index) => (
