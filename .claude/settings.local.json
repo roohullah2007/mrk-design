@@ -9,7 +9,13 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(awk -F: '$1>2550 && $1<2820')",
-      "WebFetch(domain:www.magnific.com)"
+      "WebFetch(domain:www.magnific.com)",
+      "Bash(git ls-remote *)",
+      "Bash(git fetch *)",
+      "Bash(grep -nE \"/\\\\* =+|/\\\\* -+|={5,}\" resources/css/app.css)",
+      "Bash(grep -nE \"\\(^|[^-]\\)\\(width|min-width|max-width\\):\\\\s*[0-9]{3,}px\" resources/css/app.css)",
+      "Bash(awk -F: '$1 < 2512')",
+      "PowerShell(npm run *)"
     ]
   }
 }

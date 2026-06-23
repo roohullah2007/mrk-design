@@ -33,7 +33,7 @@ export default function WhyMRK() {
             <div className="container why-new-grid">
                 <div className="why-new-left">
                     <div className="eyebrow">WHY MRK</div>
-                    <h2>The studio your<br />team will<br /><span className="it">actually like</span><br /> working with.</h2>
+                    <h2>The studio your<br className="why-br-1" />team will<br className="why-br-2" /><span className="it">actually like</span><br className="why-br-3" /> working with.</h2>
                     <div className="why-lede-row">
                         <p className="lede">Most agencies sell pixels; we sell outcomes. We work in<br /> your tools, on your cadence, and we stay until the work performs.</p>
                         <a href="#contact" className="pill primary">

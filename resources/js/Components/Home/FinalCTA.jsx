@@ -20,7 +20,7 @@ export default function FinalCTA() {
             <div className="container">
                 <div className="inner">
                     <div className="eyebrow" style={{ fontFamily: '"Inter Tight"' }}>LET'S BUILD</div>
-                    <h2>Ready to build a <span className="it">strong</span> digital<br /> presence?</h2>
+                    <h2>Ready to build a <span className="it">strong</span><br className="cta-br-tp" /> digital<br className="cta-br-main" /> presence?</h2>
                     <p>Let's turn your ideas into impactful designs that elevate your<br /> brand and drive results.</p>
                     <div className="final-cta-ctas">
                         <Link href="/contact" preserveScroll={false} className="pill primary">

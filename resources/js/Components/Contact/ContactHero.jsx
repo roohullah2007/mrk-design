@@ -1,6 +1,6 @@
 export default function ContactHero() {
     return (
-        <section className="services-hero">
+        <section className="services-hero contact-page-hero">
             <div className="container">
                 <h1 className="services-hero-title">
                     Let's build something<br/>

@@ -1645,6 +1645,8 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
 
 /* Contact Hero */
 .contact-hero { padding-top: 56px; padding-bottom: 32px; position: relative; }
+/* Contact page hero (uses .services-hero) — divider line at the bottom, like other sections. */
+.contact-page-hero { border-bottom: 1px solid var(--line); }
 .contact-hero .hero-meta {
   display: flex; justify-content: space-between; align-items: center;
   padding-bottom: 28px; margin-bottom: 56px;
@@ -2630,7 +2632,7 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
 
   /* Portfolio - button on right side of heading */
   .portfolio .sec-head { flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; }
-  .portfolio .sec-head .pill { margin-top: 8px; }
+  .portfolio .sec-head .pill { margin-top: 38px; }
 
   /* Hero description - full width, no extra wrapping */
   .hero-sub p { max-width: 100%; font-size: 18px; }
@@ -2741,7 +2743,7 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
 
   /* Why New */
   .why-new-grid { gap: 48px; }
-  .why-new-left h2 { font-size: 72px; white-space: normal; }
+  .why-new-left h2 { font-size: 70px; white-space: normal; }
 
   /* Engagements */
   .engagements-head h2 { font-size: 48px; }
@@ -3645,4 +3647,457 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
   /* Pills global */
   .pill { height: 48px; padding: 0 20px; font-size: 14px; }
   .pill .arrow { width: 32px; height: 32px; }
+}
+
+/* ============= RESPONSIVE REFINEMENTS (appended) ============= */
+
+/* Fluid media — never overflow their container.
+   max-width only (no forced height) so cover-crop images keep their ratios. */
+img, video, picture, canvas, svg { max-width: 100%; }
+
+/* Fix paragraph/sub text that was locked to a single line and could overflow
+   on tablet & mobile. Placed last so it overrides the earlier nowrap rules. */
+@media (max-width: 1023px) {
+  .why-new-row p { white-space: normal; }
+  .engagements-head .sub { white-space: normal; }
+}
+@media (max-width: 767px) {
+  .pack li { white-space: normal; }
+}
+
+/* Image slider (below Testimonials): shrink the side fade/shadow gradient
+   progressively from tablet-landscape down so it never overpowers smaller screens.
+   Desktop default stays at 280px. */
+@media (max-width: 1279px) {
+  .image-slider::before,
+  .image-slider::after { width: 180px; }
+}
+@media (max-width: 1023px) {
+  .image-slider::before,
+  .image-slider::after { width: 120px; }
+}
+@media (max-width: 767px) {
+  .image-slider::before,
+  .image-slider::after { width: 64px; }
+}
+@media (max-width: 479px) {
+  .image-slider::before,
+  .image-slider::after { width: 36px; }
+}
+
+/* ============= TABLET-LANDSCAPE ONLY TWEAKS (1024px–1279px) ============= */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* Testimonials: keep the "★ 4.9 / 5 CLUTCH" badge on the RIGHT of the heading
+     (the generic .sec-head column rule was stacking it below), nudged 15px down. */
+  .testimonials .sec-head {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .testimonials .sec-head > div:first-child { flex: 1; }
+  .testimonials .badges { flex-shrink: 0; margin-top: 95px; }
+
+  /* Why MRK: scale the heading fluidly so "The studio your" never wraps
+     across the whole tablet-landscape range. */
+  .why-new-left h2 { font-size: clamp(50px, 5.2vw, 68px); }
+
+  /* About ("Great design is more than aesthetics."): drop the desktop
+     translateX(80px) shift that was pushing the grid right (huge left gap +
+     clipped right content). Keep a small symmetric 24px edge gap (same as the
+     rest of the page). Tighter column gap (48px -> 32px) with the freed space
+     given to the image width; image lifted 6px up and a touch taller. */
+  .about-grid { grid-template-columns: 1fr 1.05fr; gap: 32px; transform: none; padding: 0 24px; }
+  .about-media { height: 480px; transform: translateY(10px); }
+  .about-img { height: 100%; }
+
+  /* Marquee: match the hero's horizontal padding (24px) on both edges. */
+  .marquee { width: calc(100% - 48px); margin: 0 24px; }
+
+  /* Instagram: shorter cards + a bit more gap between the two columns
+     (grid 1fr columns auto-shrink the card width to match the larger gap). */
+  .insta-grid { gap: 16px; }
+  .ig-post { aspect-ratio: 1.15 / 1; }
+
+  /* Services ("What we offer"): force the two columns to be exactly equal.
+     repeat(2, 1fr) is minmax(auto, 1fr), so a card with wider (nowrap) content
+     was stretching its column; minmax(0, 1fr) + min-width:0 makes both equal. */
+  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .services-grid .service-card { min-width: 0; }
+
+  /* First row = the two .big cards — trim their horizontal padding a touch. */
+  .services-grid .service-card.big { padding-left: 28px; padding-right: 28px; }
+}
+
+/* Portfolio frames: the 8 images use fixed pixel widths (designed for desktop).
+   TABLET LANDSCAPE + PORTRAIT — make the whole composition fluid so it fills the
+   row with the SAME 24px gap as the heading on both outer edges (frames keep their
+   654:543 ratio); the images simply scale down on the narrower portrait width, so
+   the layout is identical across all of mobile → tablet-landscape. */
+@media (max-width: 1279px) {
+  .portfolio-frames {
+    width: 100%;
+    max-width: none;
+    margin: -28px 0 0;
+    padding: 0 24px;          /* same x-gap as the section heading */
+    gap: 16px;
+    justify-content: flex-start;
+    align-items: stretch;        /* both frames take the same (tallest) height */
+  }
+  .portfolio-frames .pf-frame { min-width: 0; }
+  .portfolio-frames .pf-frame:nth-child(1) { flex: 654 1 0; }
+  .portfolio-frames .pf-frame:nth-child(2) { flex: 543 1 0; }
+
+  /* every image box becomes fluid; aspect-ratio preserves its proportions */
+  .portfolio-frames .pf-hover-zoom,
+  .portfolio-frames .pf-click-zoom { width: auto !important; height: auto !important; }
+
+  /* frame 1 — two-up rows (414 + 230) */
+  .portfolio-frames .pf-frame:nth-child(1) .pf-row:nth-child(1) .pf-hover-zoom:nth-child(1),
+  .portfolio-frames .pf-frame:nth-child(1) .pf-row:nth-child(2) .pf-hover-zoom { flex: 414 1 0; aspect-ratio: 414 / 230; }
+  .portfolio-frames .pf-frame:nth-child(1) .pf-row:nth-child(1) .pf-hover-zoom:nth-child(2),
+  .portfolio-frames .pf-frame:nth-child(1) .pf-row:nth-child(2) .pf-click-zoom { flex: 230 1 0; aspect-ratio: 1 / 1; }
+  /* frame 1 — full-width bottom row */
+  .portfolio-frames .pf-frame:nth-child(1) .pf-row:nth-child(3) .pf-hover-zoom { flex: 1 1 0; aspect-ratio: 654 / 311; }
+  /* frame 2 — full-width rows. Instead of fixed aspect-ratios (which left it a
+     hair shorter than frame 1), let the rows FILL frame 2's stretched height in
+     the original 322:224:224 ratio, so frame 2's total height exactly equals
+     frame 1's. Images cover their boxes. */
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row { min-height: 0; }
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(1) { flex: 322 1 0; }
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(2),
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(3) { flex: 224 1 0; }
+  .portfolio-frames .pf-frame:nth-child(2) .pf-hover-zoom {
+    flex: 1 1 auto;
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: auto;
+  }
+}
+@media (max-width: 479px) {
+  /* smallest phones: same stacked full-width layout as mobile large */
+  .portfolio-frames {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0 12px;
+    zoom: 1;
+  }
+  .portfolio-frames .pf-frame:nth-child(1),
+  .portfolio-frames .pf-frame:nth-child(2) { flex: none; width: 100%; }
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(1),
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(2),
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(3) { flex: none; }
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(1) .pf-hover-zoom { aspect-ratio: 543 / 322; height: auto !important; }
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(2) .pf-hover-zoom,
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(3) .pf-hover-zoom { aspect-ratio: 543 / 224; height: auto !important; }
+  .pf-click-zoom.is-zoomed { transform: scale(1.5); transform-origin: right center; }
+}
+
+/* The tablet-portrait line break (after "more") is hidden everywhere else. */
+.about-br-tp { display: none; }
+/* The in-flow mobile image (between the two paragraphs) is hidden everywhere else. */
+.about-media-mobile { display: none; }
+/* The mobile-small line break (after "strong") in the Let's Build heading. */
+.cta-br-tp { display: none; }
+
+/* Video banner (below "Is it time to level up your business?"): on tablet &
+   mobile, keep the FULL width (no side crop) but slightly overscan the 16:9 video
+   vertically — exactly like the desktop cover — so YouTube's top chrome (share /
+   watch-later / logo) and bottom bar are cropped off-screen. Only our custom
+   sound icon and the end play icon remain. (~2.37:1 band matches desktop.) */
+@media (max-width: 1023px) {
+  /* Full width, but crop BOTH top (~16%) and bottom (~16%) so YouTube's top
+     chrome AND the bottom share / watch-later / "YouTube" logo are hidden — same
+     as desktop. The band is a touch shorter to make room for both crops. */
+  .vb-wrap { height: auto; aspect-ratio: 21 / 8; }
+  .vb-holder iframe {
+    top: 0; left: 0;
+    transform: translateY(-16%);
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-width: 0; min-height: 0;
+  }
+}
+
+/* ============= TABLET-PORTRAIT ONLY TWEAKS (768px–1023px) ============= */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Hero image lifted up (from the 32px reset margin to -68px). */
+  .hero-image { margin-top: -68px; }
+
+  /* Testimonials "★ 4.9 / 5 CLUTCH" badge nudged down. */
+  .testimonials .badges { margin-top: 60px; }
+
+  /* Instagram: cards a touch shorter; gap restored to the default. */
+  .ig-post { aspect-ratio: 1.1 / 1; }
+
+  /* About ("Great design is more than aesthetics.") — keep the SAME two-column
+     layout as tablet landscape (image left, text right), with content scaled
+     down to fit the narrower portrait width instead of stacking. */
+  /* narrower image, wider text column (image width given to the content) */
+  .about-grid {
+    grid-template-columns: 0.78fr 1.22fr;
+    gap: 28px;
+    align-items: center;
+    transform: none;
+    padding: 0 24px;
+  }
+  .about-media { height: 360px; transform: translateY(6px); }
+  .about-img { height: 100%; }
+  /* One uniform, larger heading size; the inline 78px on "aesthetics." is
+     normalised, and nowrap keeps the break ONLY at the active <br>. */
+  .about h2 { font-size: clamp(34px, 4.6vw, 48px); white-space: nowrap; margin: 0 0 16px; }
+  .about h2 .serif-italic { font-size: 1em !important; }
+  /* break after "more" instead of after "is" in this layout */
+  .about-br-main { display: none; }
+  .about-br-tp { display: inline; }
+  /* Let the paragraphs wrap naturally to the column instead of breaking at the
+     hard-coded desktop <br> tags. */
+  .about-lead br, .about-body br { display: none; }
+  .about-lead { font-size: clamp(14px, 1.9vw, 17px); white-space: normal; margin: 0 0 14px; }
+  .about-body { font-size: clamp(12px, 1.6vw, 15px); max-width: 100%; }
+  .about-cta { margin-top: 20px; }
+}
+
+/* ============= MOBILE-LARGE ONLY TWEAKS (480px–767px) ============= */
+@media (min-width: 480px) and (max-width: 767px) {
+  /* Hero: more breathing room on top, image position adjusted, tighter corners. */
+  .hero-new { padding-top: 40px; }
+  .hero-image { margin-top: -48px; border-radius: 10px; }
+
+  /* Marquee: match the hero's horizontal padding (16px) on both edges. */
+  .marquee { width: calc(100% - 32px); margin: 0 16px; }
+
+  /* Rating: put the 4 avatars and the "4.9/5 satisfaction rating" text on the
+     same row (they were stacked one above the other). */
+  .hero-rating { flex-direction: row; align-items: center; gap: 10px; }
+
+  /* About — order: heading, first paragraph, image, second paragraph, CTA.
+     The desktop grid-column image is hidden; an in-flow image (inside the text
+     block, between the two paragraphs) is shown instead. */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    transform: none;
+    padding: 0 16px;
+  }
+  .about-media { display: none; }
+  .about-media-mobile {
+    display: block;
+    height: 300px;
+    margin: 22px 0;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+  .about-media-mobile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* heading: same line break as tablet portrait (after "more") on two lines */
+  .about h2 { font-size: clamp(32px, 7.5vw, 40px); white-space: nowrap; line-height: 1.05; margin: 0 0 16px; }
+  .about h2 .serif-italic { font-size: 1em !important; }   /* "aesthetics." matches the rest */
+  .about-br-main { display: none; }
+  .about-br-tp { display: inline; }
+  .about-lead br, .about-body br { display: none; }         /* paragraphs wrap naturally */
+  .about-lead { font-size: 16px; white-space: normal; margin: 0; }
+  .about-body { font-size: 15px; margin: 0; }
+  .about-cta { display: flex; width: 100%; justify-content: center; margin-top: 24px; }
+
+  /* Portfolio: smaller badge + button, larger "Recent Work" heading. */
+  .portfolio .eyebrow { font-size: 13px; padding: 8px 12px 8px 10px; }
+  .portfolio .sec-head h2 { font-size: 44px; }
+  .portfolio .sec-head .pill { height: 44px; font-size: 13px; padding: 0 8px 0 16px; gap: 8px; }
+  .portfolio .sec-head .pill .arrow { width: 28px; height: 28px; }
+
+  /* Portfolio frames: stack the two frames full-width (the cramped side-by-side
+     looked bad here). Each image keeps its aspect-ratio at the full screen width
+     — bigger, cleaner, more professional on a phone. */
+  .portfolio-frames {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0 16px;
+    zoom: 1;
+  }
+  .portfolio-frames .pf-frame:nth-child(1),
+  .portfolio-frames .pf-frame:nth-child(2) { flex: none; width: 100%; }
+  /* frame 2 back to aspect-ratio sizing (the fill-height trick only works when
+     the two frames sit side by side and must match heights) */
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(1),
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(2),
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(3) { flex: none; }
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(1) .pf-hover-zoom { aspect-ratio: 543 / 322; height: auto !important; }
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(2) .pf-hover-zoom,
+  .portfolio-frames .pf-frame:nth-child(2) .pf-row:nth-child(3) .pf-hover-zoom { aspect-ratio: 543 / 224; height: auto !important; }
+
+  /* Portfolio 4 click-to-zoom: smaller zoom, and grow LEFT from the right edge
+     so the enlarged image never spills off the right side. */
+  .pf-click-zoom.is-zoomed { transform: scale(1.5); transform-origin: right center; }
+
+  /* Why MRK: badge matches the Portfolio badge size; heading breaks only at its
+     <br> tags; the lede paragraph sits on the left with the "Book a free call"
+     button on the right (slightly smaller). */
+  .why-new .eyebrow { font-size: 13px; padding: 8px 12px 8px 10px; }
+  /* heading breaks ONLY after "team will" → 2 lines (hide the other two <br>) */
+  .why-new-left h2 { font-size: clamp(24px, 5.8vw, 36px); white-space: nowrap; }
+  .why-br-1, .why-br-3 { display: none; }
+  .why-lede-row { flex-direction: row; align-items: center; gap: 16px; }
+  .why-lede-row .lede { flex: 1; max-width: none; }
+  .why-lede-row .lede br { display: none; }   /* natural wrap (no awkward break 480–590px) */
+  .why-lede-row .pill.primary { flex-shrink: 0; height: 44px; font-size: 13px; padding: 0 8px 0 16px; gap: 8px; }
+  .why-lede-row .pill.primary .arrow { width: 28px; height: 28px; }
+
+  /* Testimonials: smaller "TESTIMONIALS" badge; heading on the LEFT with the
+     "★ 4.9 / 5 CLUTCH" badge on the RIGHT; show 2 cards (rest scroll right). */
+  .testimonials .eyebrow { font-size: 13px; padding: 8px 12px 8px 10px; }
+  .testimonials .sec-head { flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 16px; }
+  /* fluid + smaller badge so the heading stays on one line down to 480px */
+  .testimonials .sec-head h2 { font-size: clamp(26px, 6vw, 40px); }
+  .testimonials .badges span { font-size: 12px; padding: 4px 10px; }
+  .testimonials .sec-head > div:first-child { flex: 1; min-width: 0; }
+  .testimonials .badges { flex-shrink: 0; margin-top: 64px; }
+  .quote { flex: 0 0 calc((100% - 16px) / 2); }
+
+  /* Services ("What we offer"): keep cards within the container (no right overflow
+     in the 480–540px range); paragraph wraps naturally; card 2 heading matches
+     card 1 (it was inheriting the larger .tight size). */
+  .services-grid { grid-template-columns: minmax(0, 1fr); }
+  .services-grid .service-card { min-width: 0; }
+  .services .sec-head .sub br { display: none; }
+  .service-card.big h3.tight { font-size: 28px; }
+
+  /* Services page "Let's build" CTA: heading on a single row. */
+  .services-final-cta h2 { white-space: nowrap; }
+  .services-final-cta h2 br { display: none; }
+  .services-final-cta .pill .arrow { width: 26px; height: 26px; }
+}
+
+/* ============= MOBILE-SMALL ONLY TWEAKS (≤479px) ============= */
+@media (max-width: 479px) {
+  /* Hero: smaller subtext, image lifted up, tighter corners. */
+  .hero-subtext { font-size: 10px; }
+  .hero-image { margin-top: -38px; border-radius: 6px; }
+  /* Marquee: match the hero's horizontal padding (12px) on both edges. */
+  .marquee { width: calc(100% - 24px); margin: 0 12px; }
+
+  /* Image slider (loop below Testimonials): smaller images — scale the whole
+     track with zoom so the marquee loop stays seamless. */
+  .image-slider-track { zoom: 0.78; }
+
+  /* Testimonials: heading on the LEFT (bigger), smaller "★ 4.9 / 5 CLUTCH" badge
+     on the RIGHT. */
+  .testimonials .sec-head { flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .testimonials .sec-head h2 { font-size: 32px; }
+  .testimonials .sec-head > div:first-child { flex: 1; min-width: 0; }
+  .testimonials .badges { flex-shrink: 0; margin-top: 80px; }
+  .testimonials .badges span { font-size: 10px; padding: 3px 8px; }
+
+  /* Services ("What we offer"): keep cards exactly within the container width
+     (1fr can blow out to content min-width; minmax(0,1fr) + min-width:0 prevents
+     the slight right-side overflow). Paragraph wraps naturally (drop hard <br>);
+     card 2 heading matches card 1 (it was inheriting the larger .tight size). */
+  .services-grid { grid-template-columns: minmax(0, 1fr); }
+  .services-grid .service-card { min-width: 0; }
+  .services .sec-head .sub br { display: none; }
+  .service-card.big h3.tight { font-size: 24px; }
+
+  /* Services page "Let's build" CTA: heading on a single row (sized to fit). */
+  .services-final-cta h2 { font-size: clamp(24px, 7vw, 34px); white-space: nowrap; }
+  .services-final-cta h2 br { display: none; }
+  .services-final-cta .pill .arrow { width: 24px; height: 24px; }
+
+  /* Why MRK heading: same single break as mobile large — only after "team will"
+     (hide the other two <br>). Sized fluidly so the 2 long lines fit down to 320px. */
+  .why-new-left h2 { font-size: clamp(18px, 5.7vw, 28px); white-space: nowrap; }
+  .why-br-1, .why-br-3 { display: none; }
+  /* Lede paragraph on the left, "Book a free call" on the right (like mobile
+     large); paragraph wraps naturally to the narrower width. */
+  .why-lede-row { flex-direction: row; align-items: center; gap: 12px; }
+  .why-lede-row .lede { flex: 1; max-width: none; font-size: 14px; }
+  .why-lede-row .lede br { display: none; }
+  .why-lede-row .pill.primary { flex-shrink: 0; height: 40px; font-size: 11px; padding: 0 6px 0 12px; gap: 6px; }
+  .why-lede-row .pill.primary .arrow { width: 24px; height: 24px; }
+
+  /* Upgrade ("Is it time to level up your business?"): paragraph wraps naturally
+     (drop the hard-coded desktop <br>). */
+  .upgrade-head .sub br { display: none; }
+
+  /* Let's Build (final CTA): break the heading after "strong" instead of after
+     "digital"; paragraph wraps naturally. */
+  .cta-br-main { display: none; }
+  .cta-br-tp { display: inline; }
+  .final-cta p br { display: none; }
+
+  /* Services page hero: paragraph wraps naturally — drop the hard <br> and the
+     desktop nudge offsets so it never breaks awkwardly on small phones. */
+  .services-hero .hero-sub p br { display: none; }
+  .services-hero .hero-sub p span { position: static !important; left: auto !important; }
+
+  /* Video banner: taller, cropped 19% off the top and 22% off the bottom. A side
+     overscan (140% width) makes room for the bigger height + the heavier crop. */
+  .vb-wrap { aspect-ratio: 43 / 20; }
+  .vb-holder iframe {
+    top: 0; left: 50%;
+    transform: translate(-50%, -19%);
+    width: 140%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-width: 0; min-height: 0;
+  }
+
+
+  /* Portfolio: smaller badge + button (nudged 30px down), larger heading. */
+  .portfolio .eyebrow { font-size: 10px; padding: 7px 10px 7px 9px; }
+  .portfolio .sec-head { align-items: flex-start; }
+  .portfolio .sec-head h2 { font-size: 38px; }
+  .portfolio .sec-head .pill { height: 40px; font-size: 12px; padding: 0 6px 0 14px; gap: 6px; margin-top: 52px; }
+  .portfolio .sec-head .pill .arrow { width: 26px; height: 26px; }
+
+  /* About — same layout as mobile large: heading, first paragraph, image,
+     second paragraph, CTA. Heading wraps naturally on the narrowest screens. */
+  .about-grid { grid-template-columns: 1fr; gap: 0; transform: none; padding: 0 16px; }
+  .about-media { display: none; }
+  .about-media-mobile {
+    display: block;
+    height: 240px;
+    margin: 20px 0;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .about-media-mobile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .about h2 { font-size: clamp(24px, 8vw, 32px); white-space: normal; line-height: 1.05; margin: 0 0 14px; }
+  .about h2 .serif-italic { font-size: 1em !important; }
+  .about-br-main, .about-br-tp { display: none; }
+  .about-lead br, .about-body br { display: none; }
+  .about-lead { font-size: 14px; white-space: normal; margin: 0; }
+  .about-body { font-size: 13px; margin: 0; }
+  .about-cta { display: flex; width: 100%; justify-content: center; margin-top: 20px; }
+}
+
+/* ============= BLOG — SMALL MOBILE (≤479px) ============= */
+@media (max-width: 479px) {
+  .blog-hero { padding: 48px 0 36px; }
+  .blog-hero h1 { font-size: 34px; }
+  .blog-hero .hero-subtitle { font-size: 15px; }
+  .blog-section { padding: 40px 0 64px; }
+  .blog-filters { margin-bottom: 32px; }
+  .filter-btn { font-size: 14px; padding: 8px 16px; }
+  .blog-card .card-image { height: 180px; }
+  .blog-card .card-content { padding: 20px; }
+  .blog-card .card-title { font-size: 20px; }
+  .blog-card .card-excerpt { font-size: 14px; }
+  .blog-post-hero { min-height: 320px; padding: 40px 0; }
+  .blog-post-hero h1 { font-size: 28px; }
+  .blog-post-hero .post-meta { gap: 8px; }
+  .blog-content-section { padding: 40px 0; }
+  .blog-content-section .content-excerpt { font-size: 18px; margin: 0 0 28px; padding-bottom: 28px; }
+  .blog-content { font-size: 15px; }
+  .blog-content h2 { font-size: 22px; margin: 32px 0 16px; }
+  .blog-content h3 { font-size: 18px; }
+  .related-posts { padding: 48px 0; }
+  .related-posts .section-title { font-size: 26px; margin: 0 0 28px; }
 }
