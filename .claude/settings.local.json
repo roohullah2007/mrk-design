@@ -15,7 +15,8 @@
       "Bash(grep -nE \"/\\\\* =+|/\\\\* -+|={5,}\" resources/css/app.css)",
       "Bash(grep -nE \"\\(^|[^-]\\)\\(width|min-width|max-width\\):\\\\s*[0-9]{3,}px\" resources/css/app.css)",
       "Bash(awk -F: '$1 < 2512')",
-      "PowerShell(npm run *)"
+      "PowerShell(npm run *)",
+      "PowerShell(git ls-remote *)"
     ]
   }
 }

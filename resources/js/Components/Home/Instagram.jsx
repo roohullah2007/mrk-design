@@ -9,65 +9,49 @@ const InstagramIcon = () => (
 const posts = [
     {
         meta: "CASE STUDY",
-        title: "What working",
-        titleEm: "with founders",
-        titleEnd: " taught us.",
+        heading: <>What working <em>with</em><br/><em>founders</em> taught us.</>,
         stats: { likes: "2.4k", comments: "38" },
         theme: "cream"
     },
     {
         meta: "DESIGN NOTE",
-        title: "A good",
-        titleEm: "website",
-        titleEnd: " isn't just beautiful.",
+        heading: <>A good <em>website</em> isn't<br/>just beautiful.</>,
         stats: { likes: "1.8k", comments: "22" },
         theme: "ink dark"
     },
     {
         meta: "REEL",
-        title: "A website",
-        titleEm: "isn't",
-        titleEnd: " just a website.",
+        heading: <>A website <em>isn't</em> just a<br/>website.</>,
         stats: { likes: "4.1k", comments: "64" },
         theme: "accent dark"
     },
     {
         meta: "TIP",
-        title: "Confusion costs",
-        titleEm: "more",
-        titleEnd: " than bad design.",
+        heading: <>Confusion costs<br/><em>more</em> than bad<br/>design.</>,
         stats: { likes: "1.2k", comments: "14" },
         theme: "cream"
     },
     {
         meta: "CARD",
-        title: "Your business",
-        titleEm: "deserves",
-        titleEnd: " better copy.",
+        heading: <>Your business<br/><em>deserves</em> better copy.</>,
         stats: { likes: "982", comments: "9" },
         theme: "cream-2"
     },
     {
         meta: "BTS · SHOOT",
-        title: "Studio day,",
-        titleEm: "shipping",
-        titleEnd: " a launch.",
+        heading: <>Studio day, <em>shipping</em> a<br/>launch.</>,
         stats: { likes: "3.0k", comments: "41" },
         theme: "image dark"
     },
     {
         meta: "REEL",
-        title: "Three",
-        titleEm: "seconds",
-        titleEnd: " to win a visitor.",
+        heading: <>Three <em>seconds</em> to win a<br/>visitor.</>,
         stats: { likes: "2.7k", comments: "33" },
         theme: "accent dark"
     },
     {
         meta: "CLIENT WIN",
-        title: "Your products",
-        titleEm: "are beautiful.",
-        titleEnd: " Is your shop?",
+        heading: <>Your products <em>are</em><br/><em>beautiful.</em> Is your<br/>shop?</>,
         stats: { likes: "1.5k", comments: "18" },
         theme: "image image-2 dark"
     }
@@ -94,7 +78,7 @@ export default function Instagram() {
                     {posts.map((post, index) => (
                         <a href="https://www.instagram.com/mrkdesignagency/" target="_blank" rel="noopener" className={`ig-post ${post.theme}`} key={index}>
                             <div className="ig-meta" style={post.theme.includes('dark') ? { opacity: post.theme.includes('accent') ? 0.85 : 0.6 } : {}}>{post.meta}</div>
-                            <h3 className="ig-title">{post.title} <em>{post.titleEm}</em>{post.titleEnd}</h3>
+                            <h3 className="ig-title">{post.heading}</h3>
                             <div className="ig-stats" style={post.theme.includes('dark') && !post.theme.includes('accent') ? { opacity: 0.7 } : post.theme.includes('accent') ? { opacity: 0.85 } : {}}>
                                 <span>♡ {post.stats.likes}</span>
                                 <span>✎ {post.stats.comments}</span>
