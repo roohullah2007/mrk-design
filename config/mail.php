@@ -115,4 +115,15 @@ return [
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Contact Form Recipient
+    |--------------------------------------------------------------------------
+    |
+    | Where contact-form submissions from the website are emailed to.
+    |
+    */
+
+    'contact_to' => env('CONTACT_TO_ADDRESS', 'info@mrkdesign.agency'),
+
 ];

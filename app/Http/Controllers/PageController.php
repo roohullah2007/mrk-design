@@ -17,6 +17,26 @@ class PageController extends Controller
         return Inertia::render('Services');
     }
 
+    public function portfolio(): Response
+    {
+        return Inertia::render('Portfolio');
+    }
+
+    public function privacy(): Response
+    {
+        return Inertia::render('Legal/Privacy');
+    }
+
+    public function terms(): Response
+    {
+        return Inertia::render('Legal/Terms');
+    }
+
+    public function cookies(): Response
+    {
+        return Inertia::render('Legal/Cookies');
+    }
+
     public function contact(): Response
     {
         return Inertia::render('Contact');

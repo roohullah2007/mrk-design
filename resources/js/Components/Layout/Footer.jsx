@@ -66,7 +66,8 @@ export default function Footer({ dark = false }) {
                         <ul style={{ fontSize: '16px' }}>
                             <li><a href={isHome ? "#work" : "/#work"}>Work</a></li>
                             <li><Link href="/services" preserveScroll={false}>Services</Link></li>
-                            <li><a href={isHome ? "#work" : "/#work"}>Portfolio</a></li>
+                            <li><Link href="/portfolio" preserveScroll={false}>Portfolio</Link></li>
+                            <li><Link href="/blog" preserveScroll={false}>Blog</Link></li>
                             <li><Link href="/contact" preserveScroll={false}>Contact</Link></li>
                         </ul>
                     </div>
@@ -91,10 +92,12 @@ export default function Footer({ dark = false }) {
                     </div>
                 </div>
                 <div className="footer-bottom">
-                    <div className="footer-mark">MRK®</div>
+                    <Link href="/" preserveScroll={false} className="footer-mark" aria-label="MRK Design Agency — home">MRK®</Link>
                     <div className="footer-meta">
                         <span style={{ fontSize: '16px' }}>© 2026 MRK DESIGN AGENCY<br className="ms-br" /> ALL RIGHTS RESERVED</span>
-                        <span style={{ fontSize: '14px' }}>PRIVACY · TERMS · COOKIES</span>
+                        <span style={{ fontSize: '14px' }} className="footer-legal-links">
+                            <Link href="/privacy-policy" preserveScroll={false}>PRIVACY</Link> · <Link href="/terms-and-conditions" preserveScroll={false}>TERMS</Link> · <Link href="/cookies-policy" preserveScroll={false}>COOKIES</Link>
+                        </span>
                     </div>
                 </div>
             </div>

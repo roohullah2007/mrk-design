@@ -9,7 +9,7 @@ import WhatsAppBubble from '@/Components/Contact/WhatsAppBubble';
 
 export default function Contact() {
     return (
-        <MainLayout darkFooter={true}>
+        <MainLayout>
             <ContactHero />
             <ContactForm />
             <InfoStrip />

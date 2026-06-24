@@ -9,7 +9,7 @@ import ServicesCTA from '@/Components/Services/ServicesCTA';
 
 export default function Services() {
     return (
-        <MainLayout darkFooter={true}>
+        <MainLayout>
             <ServicesHero />
             <Stats />
             <Categories />

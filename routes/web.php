@@ -10,7 +10,13 @@ use Inertia\Inertia;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/services', [PageController::class, 'services'])->name('services');
+Route::get('/portfolio', [PageController::class, 'portfolio'])->name('portfolio');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+
+// Legal pages
+Route::get('/privacy-policy', [PageController::class, 'privacy'])->name('privacy');
+Route::get('/terms-and-conditions', [PageController::class, 'terms'])->name('terms');
+Route::get('/cookies-policy', [PageController::class, 'cookies'])->name('cookies');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 // Blog Routes

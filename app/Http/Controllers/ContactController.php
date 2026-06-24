@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactSubmissionMail;
 use App\Models\ContactSubmission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -18,7 +20,15 @@ class ContactController extends Controller
             'message' => 'required|string|max:5000',
         ]);
 
-        ContactSubmission::create($validated);
+        $submission = ContactSubmission::create($validated);
+
+        // Email the inquiry to the team. Wrapped so a mail failure never breaks
+        // the form — the submission is always safely stored in the database.
+        try {
+            Mail::to(config('mail.contact_to'))->send(new ContactSubmissionMail($submission));
+        } catch (\Throwable $e) {
+            report($e);
+        }
 
         return response()->json([
             'success' => true,

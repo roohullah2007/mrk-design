@@ -51,8 +51,9 @@ export default function Navbar() {
     return (
         <header className="nav">
             <div className="container nav-inner">
-                <Link href="/" preserveScroll={false} className="logo" aria-label="MRK Design Agency">
-                    <img src="/images/Website Navbar Logo.png" alt="MRK Design Agency" className="logo-img" style={{ height: '46px' }} />
+                <Link href="/" preserveScroll={false} className="logo nav-brand" aria-label="MRK Design Agency">
+                    <span className="nav-brand-top">mrk</span>
+                    <span className="nav-brand-bottom">design <span className="pink">agency</span></span>
                 </Link>
 
                 {/* Desktop Navigation */}

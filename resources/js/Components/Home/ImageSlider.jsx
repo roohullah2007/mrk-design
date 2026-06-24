@@ -5,7 +5,6 @@ const images = [
     "/images/Slider Section Images/Rectangle 13.png",
     "/images/Slider Section Images/Rectangle 22.png",
     "/images/Slider Section Images/Rectangle 23.png",
-    "/images/Slider Section Images/Rectangle 24.png",
 ];
 
 export default function ImageSlider() {
