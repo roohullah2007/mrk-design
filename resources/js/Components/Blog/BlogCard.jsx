@@ -2,7 +2,7 @@ import { Link } from '@inertiajs/react';
 
 export default function BlogCard({ post }) {
     const featuredImage = post.featured_image
-        ? `/storage/${post.featured_image}`
+        ? (/^(https?:)?\//.test(post.featured_image) ? post.featured_image : `/storage/${post.featured_image}`)
         : '/images/blog-placeholder.jpg';
 
     const formatDate = (dateString) => {

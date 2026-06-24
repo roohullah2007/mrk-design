@@ -26,7 +26,7 @@ export default function BlogPost({ post, relatedPosts }) {
     };
 
     const featuredImage = post.featured_image
-        ? `/storage/${post.featured_image}`
+        ? (/^(https?:)?\//.test(post.featured_image) ? post.featured_image : `/storage/${post.featured_image}`)
         : '/images/blog-placeholder.jpg';
 
     const formatDate = (dateString) => {

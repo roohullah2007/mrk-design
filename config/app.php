@@ -13,7 +13,9 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    // Hardcoded so the brand name is correct on every environment without
+    // depending on each server's .env APP_NAME value.
+    'name' => 'MRK Design Agency',
 
     /*
     |--------------------------------------------------------------------------

@@ -4,31 +4,38 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
-        <link rel="shortcut icon" type="image/png" href="{{ asset('favicon.png') }}">
-        <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
-
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
-
-        {{-- Server-rendered Open Graph / Twitter Card tags so social crawlers (which don't run JS) get rich previews when posts are shared --}}
         @php
-            $ogUrl = url($page['url'] ?? '/');
+            // Favicon cache-buster + server-rendered Open Graph / Twitter values
+            $pageData = $page ?? [];
+            $faviconV = is_file(public_path('favicon.png')) ? filemtime(public_path('favicon.png')) : '1';
+
+            $ogUrl = url($pageData['url'] ?? '/');
             $ogTitle = config('app.name', 'MRK Design Agency');
             $ogDescription = 'A full-service creative agency — brand, web, ecommerce, video, and marketing under one roof.';
             $ogImage = url('/images/hero-image.jpg');
             $ogType = 'website';
 
-            if (($page['component'] ?? '') === 'BlogPost' && !empty($page['props']['post'])) {
-                $post = $page['props']['post'];
+            if (($pageData['component'] ?? '') === 'BlogPost' && !empty($pageData['props']['post'])) {
+                $post = $pageData['props']['post'];
                 $ogType = 'article';
-                $ogTitle = $post['meta_title'] ?? $post['title'] ?? $ogTitle;
-                $ogDescription = $post['meta_description'] ?? $post['excerpt'] ?? $ogDescription;
+                $ogTitle = $post['meta_title'] ?? ($post['title'] ?? $ogTitle);
+                $ogDescription = $post['meta_description'] ?? ($post['excerpt'] ?? $ogDescription);
                 if (!empty($post['featured_image'])) {
-                    $ogImage = url('/storage/' . $post['featured_image']);
+                    $fi = $post['featured_image'];
+                    $ogImage = \Illuminate\Support\Str::startsWith($fi, ['http://', 'https://', '/'])
+                        ? url($fi)
+                        : url('/storage/' . $fi);
                 }
             }
         @endphp
+
+        <!-- Favicon (cache-busted by file mtime so updates show immediately) -->
+        <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}?v={{ $faviconV }}">
+        <link rel="shortcut icon" type="image/png" href="{{ asset('favicon.png') }}?v={{ $faviconV }}">
+        <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}?v={{ $faviconV }}">
+
+        <title inertia>{{ config('app.name', 'MRK Design Agency') }}</title>
+
         <meta name="description" content="{{ $ogDescription }}">
         <meta property="og:type" content="{{ $ogType }}">
         <meta property="og:url" content="{{ $ogUrl }}">

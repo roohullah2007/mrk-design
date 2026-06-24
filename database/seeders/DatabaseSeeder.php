@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             'is_admin' => false,
         ]);
 
-        $this->call(BlogSeeder::class);
+        // Blog content is seeded via the data migration
+        // (2026_06_24_160000_seed_blog_posts) so it loads automatically on deploy.
     }
 }
