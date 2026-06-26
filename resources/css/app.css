@@ -4402,15 +4402,32 @@ img, video, picture, canvas, svg { max-width: 100%; }
 .lp-work-tile:hover img { transform: scale(1.05); }
 .lp-work-cta { text-align: center; margin-top: 40px; }
 
-/* Why / problem */
+/* Why / problem — cost comparison */
 .lp-why { background: #fff; padding: 90px 0; border-top: 1px solid var(--line); }
-.lp-why-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; max-width: 1100px; margin: 0 auto; }
-.lp-pain { list-style: none; padding: 0; margin: 28px 0 0; }
-.lp-pain li { display: flex; align-items: flex-start; gap: 12px; font-size: 18px; line-height: 1.5; margin-bottom: 16px; color: #333; }
-.lp-pain li span { color: var(--accent); font-weight: 800; }
-.lp-why-solution { background: var(--ink); color: var(--bg); border-radius: 24px; padding: 40px; }
-.lp-why-solution h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 28px; margin: 0 0 14px; color: #fff; }
-.lp-why-solution p { font-size: 17px; line-height: 1.6; color: rgba(245,240,232,0.8); margin: 0 0 26px; }
+.lp-why-sub { max-width: 600px; margin: 16px auto 0; font-size: 18px; line-height: 1.6; color: #555; }
+.lp-compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: stretch; max-width: 1000px; margin: 0 auto; }
+.lp-compare-card { position: relative; border-radius: 24px; padding: 34px 32px; display: flex; flex-direction: column; }
+.lp-compare-card.old { background: var(--bg); border: 1px solid rgba(0,0,0,0.1); }
+.lp-compare-card.mrk { background: var(--ink); color: var(--bg); border: 1px solid var(--ink); box-shadow: 0 30px 70px rgba(228,34,120,0.22); }
+.lp-compare-tag { font-family: 'DM Sans', sans-serif; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #888; margin-bottom: 22px; font-weight: 600; }
+.lp-compare-card.mrk .lp-compare-tag { color: var(--accent-soft); }
+.lp-cost-list { list-style: none; padding: 0; margin: 0 0 24px; flex: 1; }
+.lp-cost-list li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 0; border-bottom: 1px dashed rgba(0,0,0,0.12); font-size: 15.5px; color: #333; }
+.lp-compare-card.mrk .lp-cost-list li { border-bottom-color: rgba(255,255,255,0.14); color: rgba(245,240,232,0.92); justify-content: flex-start; gap: 10px; }
+.lp-compare-card.mrk .lp-cost-list li .lp-check { color: var(--accent); flex-shrink: 0; }
+.lp-cost-name { color: #444; }
+.lp-cost-val { font-family: 'DM Sans', sans-serif; font-weight: 700; color: #c0392b; white-space: nowrap; }
+.lp-compare-total { display: flex; flex-direction: column; gap: 2px; }
+.lp-total-lbl { font-family: 'DM Sans', sans-serif; font-size: 13px; color: #999; letter-spacing: 0.04em; }
+.lp-compare-card.mrk .lp-total-lbl { color: rgba(245,240,232,0.6); }
+.lp-total-num { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.03em; line-height: 1; color: #c0392b; }
+.lp-total-num i { font-style: normal; font-size: 18px; font-weight: 700; opacity: 0.7; }
+.lp-compare-card.mrk .lp-total-num { color: #fff; }
+.lp-compare-card.mrk .lp-total-num i { color: var(--accent-soft); opacity: 1; }
+.lp-save { position: absolute; top: -14px; right: 24px; background: var(--accent); color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; padding: 7px 16px; border-radius: 999px; box-shadow: 0 8px 20px rgba(228,34,120,0.4); }
+.lp-compare-cta { margin-top: 24px; width: 100%; justify-content: center; }
+.lp-vs { align-self: center; width: 54px; height: 54px; border-radius: 50%; background: var(--accent); color: #fff; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(228,34,120,0.35); }
+.lp-compare-note { text-align: center; margin: 28px auto 0; font-size: 13px; color: #aaa; }
 
 /* Included */
 .lp-included { background: var(--bg); padding: 96px 0; }
@@ -4474,7 +4491,8 @@ img, video, picture, canvas, svg { max-width: 100%; }
   .lp-inc-grid, .lp-steps, .lp-work-grid { grid-template-columns: repeat(2, 1fr); }
   .lp-plans { grid-template-columns: 1fr; max-width: 460px; }
   .lp-plan.featured { transform: none; }
-  .lp-why-grid { grid-template-columns: 1fr; }
+  .lp-compare { grid-template-columns: 1fr; max-width: 460px; gap: 10px; }
+  .lp-vs { margin: -4px auto; }
   .lp-hero-visual { max-width: 520px; margin: 0 auto; min-height: 400px; }
 }
 @media (max-width: 600px) {

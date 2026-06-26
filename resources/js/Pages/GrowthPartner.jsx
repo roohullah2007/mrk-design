@@ -159,24 +159,44 @@ export default function GrowthPartner() {
                 </div>
             </section>
 
-            {/* Problem / Why */}
+            {/* Problem / Why — cost comparison */}
             <section className="lp-why">
                 <div className="container">
-                    <div className="lp-why-grid">
-                        <div className="lp-why-problems">
-                            <h2 className="lp-h2">Hiring help shouldn’t be this <span className="serif-italic">hard</span>.</h2>
-                            <ul className="lp-pain">
-                                <li><span>✕</span> Hiring a freelancer for every task is expensive.</li>
-                                <li><span>✕</span> Managing multiple agencies is frustrating.</li>
-                                <li><span>✕</span> A full-time designer costs thousands every month.</li>
+                    <div className="lp-head">
+                        <h2 className="lp-h2">Hiring help shouldn’t cost a <span className="serif-italic">fortune</span>.</h2>
+                        <p className="lp-why-sub">Doing it the usual way adds up fast. MRK gives you the whole team for one flat monthly price.</p>
+                    </div>
+
+                    <div className="lp-compare">
+                        <div className="lp-compare-card old">
+                            <div className="lp-compare-tag">The usual way 😮‍💨</div>
+                            <ul className="lp-cost-list">
+                                <li><span className="lp-cost-name">Freelancer — per task</span><span className="lp-cost-val">$500+ each</span></li>
+                                <li><span className="lp-cost-name">Full-time designer</span><span className="lp-cost-val">$1,000+/mo</span></li>
+                                <li><span className="lp-cost-name">WordPress developer</span><span className="lp-cost-val">$600+/mo</span></li>
+                                <li><span className="lp-cost-name">SEO specialist</span><span className="lp-cost-val">$400+/mo</span></li>
+                                <li><span className="lp-cost-name">Managing them all</span><span className="lp-cost-val">Hours / week</span></li>
                             </ul>
+                            <div className="lp-compare-total old"><span className="lp-total-lbl">Adds up to</span><span className="lp-total-num">$2,000+<i>/mo</i></span></div>
                         </div>
-                        <div className="lp-why-solution">
-                            <h3>The MRK way</h3>
-                            <p>One reliable team that handles your ongoing creative and website needs — without the overhead, the hiring, or the agency fees for every task.</p>
-                            <Link href="/contact" preserveScroll={false} className="pill ink">Get started<span className="arrow" style={{ width: '32px', height: '32px' }}><ArrowIcon /></span></Link>
+
+                        <div className="lp-vs">VS</div>
+
+                        <div className="lp-compare-card mrk">
+                            <span className="lp-save">Save 80%+</span>
+                            <div className="lp-compare-tag">The MRK way 🚀</div>
+                            <ul className="lp-cost-list">
+                                <li><Check /> Design, WordPress, SEO &amp; creative</li>
+                                <li><Check /> One dedicated team</li>
+                                <li><Check /> Unlimited requests</li>
+                                <li><Check /> No hiring, no overhead</li>
+                                <li><Check /> Cancel anytime</li>
+                            </ul>
+                            <div className="lp-compare-total mrk"><span className="lp-total-lbl">All of it for just</span><span className="lp-total-num">$200<i>/mo</i></span></div>
+                            <Link href="/contact" preserveScroll={false} className="pill primary lp-compare-cta">Start your subscription<span className="arrow"><ArrowIcon /></span></Link>
                         </div>
                     </div>
+                    <p className="lp-compare-note">*Figures reflect typical market rates and are for comparison only.</p>
                 </div>
             </section>
 
