@@ -1,5 +1,9 @@
 # MRK Website — Update Log
 
+## 2026-06-26
+- **Growth Partner landing page (`/growth-partner`)**: High-converting subscription/retainer landing page ("MRK Growth Partner — Starting at $200/month"). Sections: hero (ticks + dual CTA), problem/solution, what's included (Design / WordPress / SEO / Creative), 3 pricing tiers (🚀 Growth $200 featured, 📈 Growth Plus $450, 👑 Business Pro $850), how-it-works (4 steps), why MRK, FAQ accordion (`<details>`), pink final CTA. CTAs → /contact + WhatsApp consultation. Route + `PageController@growthPartner`, `Pages/GrowthPartner.jsx`, `.lp-*` styles in app.css. Not yet linked in nav (reachable directly / via ads). (Verified 200 in prod-cached mode.)
+
+
 A running log of UI/design changes so the whole site structure and design stays documented.
 
 ## 2026-06-24
