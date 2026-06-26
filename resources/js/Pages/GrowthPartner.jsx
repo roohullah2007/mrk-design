@@ -199,6 +199,41 @@ export default function GrowthPartner() {
                 </div>
             </section>
 
+            {/* Pricing — uses the homepage .pack card design */}
+            <section className="lp-pricing-section" id="pricing">
+                <div className="container">
+                    <div className="lp-head">
+                        <div className="eyebrow" style={{ fontFamily: '"Inter Tight"' }}>SIMPLE PRICING</div>
+                        <h2 className="lp-h2">One subscription. <span className="serif-italic">Scales with you.</span></h2>
+                        <p className="lp-why-sub">Starting at $200/month. No contracts, cancel anytime.</p>
+                    </div>
+                    <div className="pack-grid">
+                        {plans.map((p) => (
+                            <div className={`pack ${p.featured ? 'dark' : ''}`} key={p.name}>
+                                {p.featured && <div className="blob"></div>}
+                                <div className="meta">{p.emoji} {p.meta}</div>
+                                <h3>{p.name}</h3>
+                                <div>
+                                    <div className="price">{p.price}<span className="lp-pack-per">/month</span></div>
+                                    <div className="starts">{p.blurb}</div>
+                                </div>
+                                <div className="pack-bottom">
+                                    <ul>
+                                        {p.features.map((f) => (
+                                            <li key={f}><span className="check"><MiniCheck /></span>{f}</li>
+                                        ))}
+                                    </ul>
+                                    <Link href="/contact" preserveScroll={false} className="cta">
+                                        Get Started<span className="arrow"><ArrowIcon /></span>
+                                    </Link>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <p className="lp-compare-note">*Unlimited requests subject to a fair usage policy to ensure consistent service for all clients.</p>
+                </div>
+            </section>
+
             {/* What's included */}
             <section className="lp-included">
                 <div className="container">
@@ -235,41 +270,6 @@ export default function GrowthPartner() {
                     <div className="lp-work-cta">
                         <Link href="/portfolio" preserveScroll={false} className="pill ink">View full portfolio<span className="arrow" style={{ width: '32px', height: '32px' }}><ArrowIcon /></span></Link>
                     </div>
-                </div>
-            </section>
-
-            {/* Pricing — uses the homepage .pack card design */}
-            <section className="lp-pricing-section" id="pricing">
-                <div className="container">
-                    <div className="lp-head">
-                        <div className="eyebrow" style={{ fontFamily: '"Inter Tight"' }}>SIMPLE PRICING</div>
-                        <h2 className="lp-h2">One subscription. <span className="serif-italic">Scales with you.</span></h2>
-                        <p className="lp-why-sub">Starting at $200/month. No contracts, cancel anytime.</p>
-                    </div>
-                    <div className="pack-grid">
-                        {plans.map((p) => (
-                            <div className={`pack ${p.featured ? 'dark' : ''}`} key={p.name}>
-                                {p.featured && <div className="blob"></div>}
-                                <div className="meta">{p.emoji} {p.meta}</div>
-                                <h3>{p.name}</h3>
-                                <div>
-                                    <div className="price">{p.price}<span className="lp-pack-per">/month</span></div>
-                                    <div className="starts">{p.blurb}</div>
-                                </div>
-                                <div className="pack-bottom">
-                                    <ul>
-                                        {p.features.map((f) => (
-                                            <li key={f}><span className="check"><MiniCheck /></span>{f}</li>
-                                        ))}
-                                    </ul>
-                                    <Link href="/contact" preserveScroll={false} className="cta">
-                                        Get Started<span className="arrow"><ArrowIcon /></span>
-                                    </Link>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <p className="lp-compare-note">*Unlimited requests subject to a fair usage policy to ensure consistent service for all clients.</p>
                 </div>
             </section>
 
