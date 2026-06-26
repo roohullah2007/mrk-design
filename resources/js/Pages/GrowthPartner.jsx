@@ -104,47 +104,40 @@ export default function GrowthPartner() {
                     </div>
 
                     <div className="lp-hero-visual" aria-hidden="true">
-                        <div className="lp-board">
-                            <div className="lp-board-top">
-                                <span className="lp-wdot"></span><span className="lp-wdot"></span><span className="lp-wdot"></span>
-                                <span className="lp-board-title">MRK Growth Board</span>
-                            </div>
-                            <div className="lp-board-body">
-                                <div className="lp-col">
-                                    <div className="lp-col-head">Your requests</div>
-                                    <div className="lp-task">
-                                        <span className="lp-task-ic done"><Check /></span>
-                                        <div className="lp-task-txt"><b>Landing page design</b><i>Delivered in 2 days</i></div>
-                                    </div>
-                                    <div className="lp-task active">
-                                        <span className="lp-task-ic spin"></span>
-                                        <div className="lp-task-txt"><b>WordPress updates</b><i>In progress…</i></div>
-                                    </div>
-                                    <div className="lp-task">
-                                        <span className="lp-task-ic dot"></span>
-                                        <div className="lp-task-txt"><b>Monthly SEO checkup</b><i>Queued — up next</i></div>
-                                    </div>
-                                </div>
-                                <div className="lp-growth">
-                                    <div className="lp-growth-head">Your growth <span className="lp-growth-up">▲ 38%</span></div>
-                                    <div className="lp-bars">
-                                        <span style={{ height: '34%' }}></span>
-                                        <span style={{ height: '50%' }}></span>
-                                        <span style={{ height: '44%' }}></span>
-                                        <span style={{ height: '66%' }}></span>
-                                        <span style={{ height: '80%' }}></span>
-                                        <span style={{ height: '100%' }} className="peak"></span>
-                                    </div>
+                        <div className="lp-photo">
+                            <img src="/images/hero-image.jpg" alt="" loading="eager" />
+
+                            {/* chat card */}
+                            <div className="lp-card lp-card-chat">
+                                <img className="lp-card-ava" src="/images/avatar-3.jpg" alt="" />
+                                <div>
+                                    <div className="lp-card-name"><b>MRK</b> · your design team</div>
+                                    <div className="lp-card-msg">Your new landing page is ready for review 🎉</div>
                                 </div>
                             </div>
-                            <div className="lp-board-foot">
-                                <span className="lp-pm-ava"><img src="/images/avatar-2.jpg" alt="" /></span>
-                                <span className="lp-pm-txt"><b>Your dedicated team</b> is on it</span>
-                                <span className="lp-pm-live">● Online</span>
+
+                            {/* stats card */}
+                            <div className="lp-card lp-card-stats">
+                                <div className="lp-card-k">Conversions this month</div>
+                                <div className="lp-card-v">+32%<span className="lp-card-up">↑</span></div>
+                                <div className="lp-mini-bars">
+                                    <span style={{ height: '40%' }}></span>
+                                    <span style={{ height: '55%' }}></span>
+                                    <span style={{ height: '48%' }}></span>
+                                    <span style={{ height: '70%' }}></span>
+                                    <span style={{ height: '62%' }}></span>
+                                    <span style={{ height: '88%' }}></span>
+                                    <span style={{ height: '100%' }} className="peak"></span>
+                                </div>
+                            </div>
+
+                            {/* task card */}
+                            <div className="lp-card lp-card-task">
+                                <div className="lp-card-k">Homepage redesign</div>
+                                <div className="lp-card-status"><span className="lp-dot-green"></span> Delivered in 2 days</div>
+                                <span className="lp-card-btn">Approve</span>
                             </div>
                         </div>
-                        <div className="lp-float lp-float-1"><span>⚡</span> 2–3 day delivery</div>
-                        <div className="lp-float lp-float-2"><Check /> Unlimited requests</div>
                     </div>
                 </div>
             </section>
