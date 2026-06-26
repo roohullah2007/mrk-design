@@ -22,6 +22,11 @@ class PageController extends Controller
         return Inertia::render('Portfolio');
     }
 
+    public function growthPartner(): Response
+    {
+        return Inertia::render('GrowthPartner');
+    }
+
     public function privacy(): Response
     {
         return Inertia::render('Legal/Privacy');

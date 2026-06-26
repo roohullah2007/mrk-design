@@ -11,6 +11,7 @@ use Inertia\Inertia;
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/portfolio', [PageController::class, 'portfolio'])->name('portfolio');
+Route::get('/growth-partner', [PageController::class, 'growthPartner'])->name('growth-partner');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 // Legal pages
