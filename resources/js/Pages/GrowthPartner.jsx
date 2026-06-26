@@ -15,6 +15,12 @@ const Check = () => (
     </svg>
 );
 
+const MiniCheck = () => (
+    <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+        <path d="M3 7.5L6 10.5L11.5 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
 const included = [
     { icon: '🎨', title: 'Design', items: ['UI/UX Design', 'Landing Pages', 'Website Sections', 'Social Media Graphics', 'Ad Creatives', 'Banners', 'Brand Assets', 'Logo Updates'] },
     { icon: '💻', title: 'WordPress Support', items: ['Website Updates', 'New Pages', 'New Sections', 'Bug Fixes', 'Plugin Configuration', 'Speed Optimization', 'Mobile Responsiveness', 'Website Maintenance'] },
@@ -24,17 +30,17 @@ const included = [
 
 const plans = [
     {
-        emoji: '🚀', name: 'Growth', price: '$200', featured: true,
+        emoji: '🚀', name: 'Growth', price: '$200', featured: true, meta: 'MOST POPULAR · STARTER',
         blurb: 'Perfect for startups and growing businesses.',
         features: ['Unlimited Requests*', 'One Active Task at a Time', 'Unlimited Revisions', '2–3 Day Average Delivery', 'WordPress Support', 'UI/UX Design', 'Graphic Design', 'Basic SEO', 'Website Maintenance', 'Dedicated Project Manager'],
     },
     {
-        emoji: '📈', name: 'Growth Plus', price: '$450',
+        emoji: '📈', name: 'Growth Plus', price: '$450', meta: 'SCALE UP',
         blurb: 'Everything in Growth, plus:',
         features: ['Priority turnaround', 'Two active requests', 'Shopify support', 'Conversion optimization', 'Landing page development', 'Monthly strategy call'],
     },
     {
-        emoji: '👑', name: 'Business Pro', price: '$850',
+        emoji: '👑', name: 'Business Pro', price: '$850', meta: 'FULL SERVICE',
         blurb: 'Everything in Growth Plus, plus:',
         features: ['Unlimited active revisions', 'Advanced SEO', 'Funnel design', 'Custom development hours', 'Monthly performance reports', 'Priority support'],
     },
@@ -232,32 +238,38 @@ export default function GrowthPartner() {
                 </div>
             </section>
 
-            {/* Pricing */}
-            <section className="lp-pricing" id="pricing">
+            {/* Pricing — uses the homepage .pack card design */}
+            <section className="lp-pricing-section" id="pricing">
                 <div className="container">
                     <div className="lp-head">
-                        <div className="eyebrow" style={{ fontFamily: '"Inter Tight"', color: 'var(--accent-soft)' }}>SIMPLE PRICING</div>
-                        <h2 className="lp-h2 lp-h2-light">One subscription. <span className="serif-italic">Scales with you.</span></h2>
-                        <p className="lp-pricing-sub">Starting at $200/month. No contracts, cancel anytime.</p>
+                        <div className="eyebrow" style={{ fontFamily: '"Inter Tight"' }}>SIMPLE PRICING</div>
+                        <h2 className="lp-h2">One subscription. <span className="serif-italic">Scales with you.</span></h2>
+                        <p className="lp-why-sub">Starting at $200/month. No contracts, cancel anytime.</p>
                     </div>
-                    <div className="lp-plans">
+                    <div className="pack-grid">
                         {plans.map((p) => (
-                            <div className={`lp-plan ${p.featured ? 'featured' : ''}`} key={p.name}>
-                                {p.featured && <span className="lp-plan-tag">Most Popular</span>}
-                                <div className="lp-plan-emoji">{p.emoji}</div>
-                                <h3 className="lp-plan-name">{p.name}</h3>
-                                <div className="lp-plan-price"><span>{p.price}</span>/month</div>
-                                <p className="lp-plan-blurb">{p.blurb}</p>
-                                <ul className="lp-plan-features">
-                                    {p.features.map((f) => <li key={f}><Check />{f}</li>)}
-                                </ul>
-                                <Link href="/contact" preserveScroll={false} className={`pill ${p.featured ? 'primary' : 'ghost-light'} lp-plan-cta`}>
-                                    Get Started{p.featured && <span className="arrow"><ArrowIcon /></span>}
-                                </Link>
+                            <div className={`pack ${p.featured ? 'dark' : ''}`} key={p.name}>
+                                {p.featured && <div className="blob"></div>}
+                                <div className="meta">{p.emoji} {p.meta}</div>
+                                <h3>{p.name}</h3>
+                                <div>
+                                    <div className="price">{p.price}<span className="lp-pack-per">/month</span></div>
+                                    <div className="starts">{p.blurb}</div>
+                                </div>
+                                <div className="pack-bottom">
+                                    <ul>
+                                        {p.features.map((f) => (
+                                            <li key={f}><span className="check"><MiniCheck /></span>{f}</li>
+                                        ))}
+                                    </ul>
+                                    <Link href="/contact" preserveScroll={false} className="cta">
+                                        Get Started<span className="arrow"><ArrowIcon /></span>
+                                    </Link>
+                                </div>
                             </div>
                         ))}
                     </div>
-                    <p className="lp-fineprint">*Unlimited requests subject to a fair usage policy to ensure consistent service for all clients.</p>
+                    <p className="lp-compare-note">*Unlimited requests subject to a fair usage policy to ensure consistent service for all clients.</p>
                 </div>
             </section>
 

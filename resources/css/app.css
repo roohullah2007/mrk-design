@@ -4426,7 +4426,11 @@ img, video, picture, canvas, svg { max-width: 100%; }
 .lp-inc-card li { display: flex; align-items: flex-start; gap: 8px; font-size: 14.5px; line-height: 1.4; margin-bottom: 10px; color: #444; }
 .lp-inc-card li .lp-check { width: 16px; height: 16px; color: var(--accent); margin-top: 2px; }
 
-/* Pricing */
+/* Pricing — reuses homepage .pack / .pack-grid card design */
+.lp-pricing-section { background: var(--bg); padding: 96px 0; }
+.lp-pack-per { font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; font-weight: 700; opacity: 0.55; margin-left: 3px; letter-spacing: 0; }
+
+/* Pricing (legacy — kept harmless) */
 .lp-pricing { background: var(--ink); padding: 96px 0; }
 .lp-pricing-sub { color: rgba(245,240,232,0.7); font-size: 18px; margin: 16px 0 0; }
 .lp-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: start; max-width: 1100px; margin: 0 auto; }
