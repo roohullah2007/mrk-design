@@ -72,27 +72,90 @@ export default function GrowthPartner() {
 
             {/* Hero */}
             <section className="lp-hero">
-                <div className="container">
-                    <span className="lp-badge">🚀 MRK Growth Partner</span>
-                    <h1 className="lp-hero-title">
-                        Stop hiring for <br className="lp-br" />every small task.
-                    </h1>
-                    <p className="lp-hero-sub">
-                        Your design, website &amp; digital team for just <span className="lp-accent">$200/month</span>.
-                        Get ongoing design, WordPress support, basic SEO, and creative services — all under one monthly plan.
-                    </p>
-                    <div className="lp-ticks">
-                        <span><Check /> No long-term contracts</span>
-                        <span><Check /> Cancel anytime</span>
-                        <span><Check /> Fast turnaround</span>
+                <span className="lp-blob lp-blob-1" aria-hidden="true"></span>
+                <span className="lp-blob lp-blob-2" aria-hidden="true"></span>
+                <div className="container lp-hero-grid">
+                    <div className="lp-hero-copy">
+                        <span className="lp-badge">🚀 MRK Growth Partner</span>
+                        <h1 className="lp-hero-title">
+                            Stop hiring for <span className="serif-italic lp-accent">every</span> small task.
+                        </h1>
+                        <p className="lp-hero-sub">
+                            Your design, website &amp; digital team for just <span className="lp-accent">$200/month</span>.
+                            Ongoing design, WordPress support, basic SEO, and creative — all under one monthly plan.
+                        </p>
+                        <div className="lp-ticks">
+                            <span><Check /> No contracts</span>
+                            <span><Check /> Cancel anytime</span>
+                            <span><Check /> Fast turnaround</span>
+                        </div>
+                        <div className="lp-cta-row">
+                            <Link href="/contact" preserveScroll={false} className="pill primary lp-cta">
+                                Start Today <span className="arrow"><ArrowIcon /></span>
+                            </Link>
+                            <a href={WA} target="_blank" rel="noopener noreferrer" className="pill ghost lp-cta">Book a Free Consultation</a>
+                        </div>
+                        <div className="lp-trust">
+                            <div className="lp-avatars">
+                                {[1, 2, 3, 4].map((n) => <img key={n} src={`/images/avatar-${n}.jpg`} alt="" />)}
+                            </div>
+                            <p>Trusted by <strong>50+ brands</strong> worldwide · <span className="lp-stars">★★★★★</span> 4.9/5</p>
+                        </div>
                     </div>
-                    <div className="lp-cta-row">
-                        <Link href="/contact" preserveScroll={false} className="pill primary lp-cta">
-                            Start Today <span className="arrow"><ArrowIcon /></span>
-                        </Link>
-                        <a href={WA} target="_blank" rel="noopener noreferrer" className="pill ghost lp-cta">Book a Free Consultation</a>
+
+                    <div className="lp-hero-visual" aria-hidden="true">
+                        <div className="lp-board">
+                            <div className="lp-board-top">
+                                <span className="lp-wdot"></span><span className="lp-wdot"></span><span className="lp-wdot"></span>
+                                <span className="lp-board-title">MRK Growth Board</span>
+                            </div>
+                            <div className="lp-board-body">
+                                <div className="lp-col">
+                                    <div className="lp-col-head">Your requests</div>
+                                    <div className="lp-task">
+                                        <span className="lp-task-ic done"><Check /></span>
+                                        <div className="lp-task-txt"><b>Landing page design</b><i>Delivered in 2 days</i></div>
+                                    </div>
+                                    <div className="lp-task active">
+                                        <span className="lp-task-ic spin"></span>
+                                        <div className="lp-task-txt"><b>WordPress updates</b><i>In progress…</i></div>
+                                    </div>
+                                    <div className="lp-task">
+                                        <span className="lp-task-ic dot"></span>
+                                        <div className="lp-task-txt"><b>Monthly SEO checkup</b><i>Queued — up next</i></div>
+                                    </div>
+                                </div>
+                                <div className="lp-growth">
+                                    <div className="lp-growth-head">Your growth <span className="lp-growth-up">▲ 38%</span></div>
+                                    <div className="lp-bars">
+                                        <span style={{ height: '34%' }}></span>
+                                        <span style={{ height: '50%' }}></span>
+                                        <span style={{ height: '44%' }}></span>
+                                        <span style={{ height: '66%' }}></span>
+                                        <span style={{ height: '80%' }}></span>
+                                        <span style={{ height: '100%' }} className="peak"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="lp-board-foot">
+                                <span className="lp-pm-ava"><img src="/images/avatar-2.jpg" alt="" /></span>
+                                <span className="lp-pm-txt"><b>Your dedicated team</b> is on it</span>
+                                <span className="lp-pm-live">● Online</span>
+                            </div>
+                        </div>
+                        <div className="lp-float lp-float-1"><span>⚡</span> 2–3 day delivery</div>
+                        <div className="lp-float lp-float-2"><Check /> Unlimited requests</div>
                     </div>
-                    <p className="lp-hero-note">Starting at $200/month · billed monthly · no setup fees</p>
+                </div>
+            </section>
+
+            {/* Stats band */}
+            <section className="lp-stats">
+                <div className="container lp-stats-grid">
+                    <div className="lp-stat"><div className="lp-stat-num">120+</div><div className="lp-stat-lbl">Projects shipped</div></div>
+                    <div className="lp-stat"><div className="lp-stat-num">50+</div><div className="lp-stat-lbl">Brands served</div></div>
+                    <div className="lp-stat"><div className="lp-stat-num">24h</div><div className="lp-stat-lbl">Avg. reply time</div></div>
+                    <div className="lp-stat"><div className="lp-stat-num">4.9★</div><div className="lp-stat-lbl">Client rating</div></div>
                 </div>
             </section>
 
@@ -134,6 +197,24 @@ export default function GrowthPartner() {
                                 </ul>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Recent work showcase */}
+            <section className="lp-work">
+                <div className="container">
+                    <div className="lp-head">
+                        <div className="eyebrow" style={{ fontFamily: '"Inter Tight"' }}>RECENT WORK</div>
+                        <h2 className="lp-h2">The kind of work you’ll <span className="serif-italic">get</span>.</h2>
+                    </div>
+                    <div className="lp-work-grid">
+                        {['rad-coffee.png', 'nextgen-immigration.png', 'deister-software.png', 'cafe-branding.jpg', 'perfume-box-packaging.jpg', 'oran-velorian-logo.jpg'].map((img) => (
+                            <div className="lp-work-tile" key={img}><img src={`/images/behance/${img}`} alt="MRK design work sample" loading="lazy" /></div>
+                        ))}
+                    </div>
+                    <div className="lp-work-cta">
+                        <Link href="/portfolio" preserveScroll={false} className="pill ink">View full portfolio<span className="arrow" style={{ width: '32px', height: '32px' }}><ArrowIcon /></span></Link>
                     </div>
                 </div>
             </section>

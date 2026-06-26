@@ -25,6 +25,7 @@ export default function Navbar() {
     const isServices = url === '/services';
     const isBlog = url === '/blog' || url.startsWith('/blog/');
     const isContact = url === '/contact';
+    const isGrowth = url === '/growth-partner';
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     // Close mobile menu on route change
@@ -60,6 +61,7 @@ export default function Navbar() {
                 <nav className="nav-pill nav-desktop">
                     <Link href="/" preserveScroll={false} className={isHome ? "active" : ""}>Home</Link>
                     <Link href="/services" preserveScroll={false} className={isServices ? "active" : ""}>Services</Link>
+                    <Link href="/growth-partner" preserveScroll={false} className={isGrowth ? "active" : ""}>Pricing</Link>
                     <Link href="/blog" preserveScroll={false} className={isBlog ? "active" : ""}>Blog</Link>
                     <a href={isHome ? "#testimonials" : "/#testimonials"}>Testimonials</a>
                     <Link href="/contact" preserveScroll={false} className={isContact ? "active" : ""}>Contact</Link>
@@ -87,6 +89,7 @@ export default function Navbar() {
                 <nav className="mobile-nav">
                     <Link href="/" preserveScroll={false} className={isHome ? "active" : ""} onClick={handleLinkClick}>Home</Link>
                     <Link href="/services" preserveScroll={false} className={isServices ? "active" : ""} onClick={handleLinkClick}>Services</Link>
+                    <Link href="/growth-partner" preserveScroll={false} className={isGrowth ? "active" : ""} onClick={handleLinkClick}>Pricing</Link>
                     <Link href="/blog" preserveScroll={false} className={isBlog ? "active" : ""} onClick={handleLinkClick}>Blog</Link>
                     <a href={isHome ? "#testimonials" : "/#testimonials"} onClick={handleLinkClick}>Testimonials</a>
                     <Link href="/contact" preserveScroll={false} className={isContact ? "active" : ""} onClick={handleLinkClick}>Contact</Link>
