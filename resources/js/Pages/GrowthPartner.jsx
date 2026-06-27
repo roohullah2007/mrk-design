@@ -21,6 +21,12 @@ const MiniCheck = () => (
     </svg>
 );
 
+const svgProps = { width: 26, height: 26, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round", strokeLinejoin: "round" };
+const IconSubscribe = () => (<svg {...svgProps}><rect x="2" y="5" width="20" height="14" rx="2.5" /><path d="M2 10h20M6 15h4" /></svg>);
+const IconSubmit = () => (<svg {...svgProps}><path d="M8 6h12M8 12h12M8 18h8" /><circle cx="3.5" cy="6" r="1.3" /><circle cx="3.5" cy="12" r="1.3" /><circle cx="3.5" cy="18" r="1.3" /></svg>);
+const IconWork = () => (<svg {...svgProps}><path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9z" /><path d="M19 14l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" /></svg>);
+const IconGrow = () => (<svg {...svgProps}><path d="M3 17l6-6 4 4 8-8" /><path d="M17 7h4v4" /></svg>);
+
 const included = [
     { icon: '🎨', title: 'Design', items: ['UI/UX Design', 'Landing Pages', 'Website Sections', 'Social Media Graphics', 'Ad Creatives', 'Banners', 'Brand Assets', 'Logo Updates'] },
     { icon: '💻', title: 'WordPress Support', items: ['Website Updates', 'New Pages', 'New Sections', 'Bug Fixes', 'Plugin Configuration', 'Speed Optimization', 'Mobile Responsiveness', 'Website Maintenance'] },
@@ -47,10 +53,10 @@ const plans = [
 ];
 
 const steps = [
-    { n: '01', title: 'Subscribe', text: 'Choose the plan that fits your business.' },
-    { n: '02', title: 'Submit Your Requests', text: 'Use Trello, ClickUp, Notion, or email.' },
-    { n: '03', title: 'We Get to Work', text: 'Our team designs, updates, and improves your digital assets.' },
-    { n: '04', title: 'Keep Growing', text: 'Request your next task whenever you’re ready.' },
+    { n: '01', title: 'Subscribe', text: 'Choose the plan that fits your business.', icon: <IconSubscribe /> },
+    { n: '02', title: 'Submit Your Requests', text: 'Use Trello, ClickUp, Notion, or email.', icon: <IconSubmit /> },
+    { n: '03', title: 'We Get to Work', text: 'Our team designs, updates, and improves your digital assets.', icon: <IconWork /> },
+    { n: '04', title: 'Keep Growing', text: 'Request your next task whenever you’re ready.', icon: <IconGrow /> },
 ];
 
 const whyMrk = [
@@ -283,7 +289,10 @@ export default function GrowthPartner() {
                     <div className="lp-steps">
                         {steps.map((s) => (
                             <div className="lp-step" key={s.n}>
-                                <div className="lp-step-n">{s.n}</div>
+                                <div className="lp-step-top">
+                                    <span className="lp-step-ic">{s.icon}</span>
+                                    <span className="lp-step-n">{s.n}</span>
+                                </div>
                                 <h3>{s.title}</h3>
                                 <p>{s.text}</p>
                             </div>
