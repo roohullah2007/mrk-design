@@ -745,6 +745,14 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
     height: auto !important;
     aspect-ratio: 320 / 224 !important;
   }
+  /* later-added single full-width row (e.g. CartSage) */
+  .portfolio-frames .pf-row-wide { flex: none; }
+  .portfolio-frames .pf-row-wide .pf-hover-zoom {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    height: auto !important;
+    aspect-ratio: 543 / 300 !important;
+  }
 }
 
 /* hover caption — project category, name, and view link */

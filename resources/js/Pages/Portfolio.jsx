@@ -49,6 +49,7 @@ const projects = [
     { img: `${base}/lead-magnet-funnel.png`, title: "Lead Magnet Click Funnel", category: "Funnels", url: "https://www.behance.net/gallery/237777441/Lead-Magnet-Click-funnel-Design-in-Figma" },
 
     // Mobile apps
+    { img: `${base}/cartsage.png`, title: "CartSage — Grocery Mobile App", category: "Mobile Apps", url: "https://www.behance.net/gallery/251731361/CartSage-Grocery-Mobile-App-Design" },
     { img: `${base}/homer-app.png`, title: "Homer — Home Services App", category: "Mobile Apps", url: "https://www.behance.net/gallery/207235923/Homer-App-(-Home-services-app)" },
 
     // WordPress websites
