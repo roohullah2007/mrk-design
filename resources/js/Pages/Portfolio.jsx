@@ -72,6 +72,23 @@ const projects = [
 const CATEGORY_ORDER = ["Web Design", "WordPress", "Custom Code", "Shopify", "Logo Design", "Packaging", "Branding", "Funnels", "Mobile Apps", "SEO"];
 const categories = ["All", ...CATEGORY_ORDER.filter((c) => projects.some((p) => p.category === c))];
 
+// Video-editing categories — each opens its Google Drive folder.
+// TODO: replace each `url` with that category's specific Drive subfolder link.
+const VIDEO_FOLDER = "https://drive.google.com/drive/folders/1V_h4znc-GN92eFm92eF4r8AQhLYv8kiw";
+const videoCategories = [
+    { name: "ADS / Product Promos", emoji: "🛍️", url: VIDEO_FOLDER },
+    { name: "After Effects Motion Graphics", emoji: "✨", url: VIDEO_FOLDER },
+    { name: "Documentary", emoji: "🎬", url: VIDEO_FOLDER },
+    { name: "Podcast", emoji: "🎙️", url: VIDEO_FOLDER },
+    { name: "Real Estate", emoji: "🏠", url: VIDEO_FOLDER },
+    { name: "Reels & Shorts", emoji: "📱", url: VIDEO_FOLDER },
+    { name: "Talking Head", emoji: "🗣️", url: VIDEO_FOLDER },
+    { name: "Talking Head + Motion Graphics", emoji: "💬", url: VIDEO_FOLDER },
+    { name: "Trailer Montage", emoji: "🎞️", url: VIDEO_FOLDER },
+    { name: "Websites Promo", emoji: "🖥️", url: VIDEO_FOLDER },
+    { name: "YouTube / Cashcow / Automation", emoji: "▶️", url: VIDEO_FOLDER },
+];
+
 export default function Portfolio() {
     const [active, setActive] = useState("All");
     const [proof, setProof] = useState(null); // SEO proof shown in modal
@@ -177,6 +194,26 @@ export default function Portfolio() {
                     </div>
                 </div>
             )}
+
+            {/* Video editing — each category opens its Drive folder */}
+            <section className="pf-video">
+                <div className="container">
+                    <div className="pf-video-head">
+                        <div className="eyebrow" style={{ fontFamily: '"Inter Tight"', marginBottom: '18px' }}>VIDEO EDITING</div>
+                        <h2>Video <span className="serif-italic">editing</span></h2>
+                        <p>Browse our video work by category — each opens the full folder of samples.</p>
+                    </div>
+                    <div className="vid-grid">
+                        {videoCategories.map((v) => (
+                            <a className="vid-card" href={v.url} target="_blank" rel="noopener noreferrer" key={v.name}>
+                                <span className="vid-ic">{v.emoji}</span>
+                                <span className="vid-name">{v.name}</span>
+                                <span className="vid-open">Open folder ↗</span>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             <section className="final-cta portfolio-cta-banner">
                 <div className="container">
