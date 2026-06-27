@@ -248,13 +248,17 @@ export default function GrowthPartner() {
                         <h2 className="lp-h2">Everything your brand needs, <span className="serif-italic">handled</span>.</h2>
                     </div>
                     <div className="lp-inc-grid">
-                        {included.map((cat) => (
+                        {included.map((cat, i) => (
                             <div className="lp-inc-card" key={cat.title}>
-                                <div className="lp-inc-icon">{cat.icon}</div>
+                                <div className="lp-inc-top">
+                                    <span className="lp-inc-icon">{cat.icon}</span>
+                                    <span className="lp-inc-num">{String(i + 1).padStart(2, '0')}</span>
+                                </div>
                                 <h3>{cat.title}</h3>
-                                <ul>
-                                    {cat.items.map((it) => <li key={it}><Check />{it}</li>)}
-                                </ul>
+                                <span className="lp-inc-count">{cat.items.length} services included</span>
+                                <div className="lp-inc-tags">
+                                    {cat.items.map((it) => <span className="lp-inc-tag" key={it}>{it}</span>)}
+                                </div>
                             </div>
                         ))}
                     </div>

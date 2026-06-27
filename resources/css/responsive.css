@@ -1709,15 +1709,19 @@ img, video, picture, canvas, svg { max-width: 100%; }
 .lp-vs { align-self: center; width: 54px; height: 54px; border-radius: 50%; background: var(--accent); color: #fff; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(228,34,120,0.35); }
 .lp-compare-note { text-align: center; margin: 28px auto 0; font-size: 13px; color: #aaa; }
 
-/* Included */
+/* Included — 2x2 cards with icon badge + service chips */
 .lp-included { background: var(--bg); padding: 96px 0; }
-.lp-inc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.lp-inc-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 20px; padding: 28px; }
-.lp-inc-icon { font-size: 30px; margin-bottom: 12px; }
-.lp-inc-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; margin: 0 0 18px; color: var(--ink); }
-.lp-inc-card ul { list-style: none; padding: 0; margin: 0; }
-.lp-inc-card li { display: flex; align-items: flex-start; gap: 8px; font-size: 14.5px; line-height: 1.4; margin-bottom: 10px; color: #444; }
-.lp-inc-card li .lp-check { width: 16px; height: 16px; color: var(--accent); margin-top: 2px; }
+.lp-inc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; max-width: 1000px; margin: 0 auto; }
+.lp-inc-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 24px; padding: 32px; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.lp-inc-card:hover { transform: translateY(-4px); box-shadow: 0 22px 46px rgba(0,0,0,0.08); border-color: rgba(228,34,120,0.4); }
+.lp-inc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.lp-inc-icon { width: 58px; height: 58px; border-radius: 16px; background: var(--accent-soft); display: inline-flex; align-items: center; justify-content: center; font-size: 28px; }
+.lp-inc-num { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.03em; color: rgba(0,0,0,0.1); line-height: 1; }
+.lp-inc-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px; margin: 0 0 4px; color: var(--ink); }
+.lp-inc-count { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.lp-inc-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.lp-inc-tag { background: var(--bg); border: 1px solid rgba(0,0,0,0.1); border-radius: 999px; padding: 7px 14px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: #333; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+.lp-inc-card:hover .lp-inc-tag { border-color: rgba(228,34,120,0.25); }
 
 /* Pricing — reuses homepage .pack / .pack-grid card design */
 .lp-pricing-section { background: var(--bg); padding: 96px 0; }
