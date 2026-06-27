@@ -449,6 +449,32 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
   }
 }
 
+/* Mobile hero gallery — two auto-scrolling rows (hidden on larger screens) */
+.hero-mobile-gallery { display: none; }
+.hmg-row { display: flex; gap: 12px; width: max-content; }
+.hmg-row + .hmg-row { margin-top: 12px; }
+.hmg-row img {
+  flex: 0 0 auto; width: 200px; height: 132px; object-fit: cover;
+  border-radius: 14px; box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+}
+.hmg-row.r1 { animation: hmg-scroll-left 32s linear infinite; }
+.hmg-row.r2 { animation: hmg-scroll-right 32s linear infinite; }
+@keyframes hmg-scroll-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes hmg-scroll-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+@media (max-width: 768px) {
+  .hero-image { display: none; }
+  .hero-mobile-gallery {
+    display: block; margin-top: 28px; overflow: hidden;
+    width: 100vw; margin-left: 50%; transform: translateX(-50%);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+}
+@media (max-width: 480px) {
+  .hmg-row img { width: 160px; height: 108px; }
+}
+
 /* Bento Grid - 5 Columns (kept for reference) */
 .bento-grid {
   display: flex;

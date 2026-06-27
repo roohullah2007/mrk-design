@@ -55,9 +55,23 @@ export default function Hero() {
 
                 <p className="hero-subtext">Schedule a relaxed call to talk about your goals.</p>
 
-                {/* Hero Image */}
+                {/* Hero Image — collage (desktop/tablet) */}
                 <div className="hero-image">
                     <img src="/images/Frame 1597884381.png" alt="MRK Design Portfolio" />
+                </div>
+
+                {/* Hero gallery — auto-scrolling rows (mobile only) */}
+                <div className="hero-mobile-gallery" aria-hidden="true">
+                    <div className="hmg-row r1">
+                        {[1, 2, 3, 4, 5, 1, 2, 3, 4, 5].map((n, i) => (
+                            <img src={`/images/hero/hero-${n}.png`} alt="" key={`r1-${i}`} />
+                        ))}
+                    </div>
+                    <div className="hmg-row r2">
+                        {[6, 7, 8, 9, 10, 6, 7, 8, 9, 10].map((n, i) => (
+                            <img src={`/images/hero/hero-${n}.png`} alt="" key={`r2-${i}`} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
