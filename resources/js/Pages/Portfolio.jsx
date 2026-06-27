@@ -4,6 +4,10 @@ import MainLayout from '@/Layouts/MainLayout';
 
 const base = "/images/behance";
 
+// Video-editing portfolio lives in this Drive folder.
+// TODO: replace each video item's `url` with that category's specific Drive subfolder link.
+const VIDEO_FOLDER = "https://drive.google.com/drive/folders/1V_h4znc-GN92eFm92eF4r8AQhLYv8kiw";
+
 const ArrowIcon = () => (
     <svg width="18" height="18" viewBox="0 0 14 14" fill="none">
         <path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
@@ -66,28 +70,24 @@ const projects = [
     { img: "/images/seo/site-beauty-box.jpg", proof: "/images/seo/beauty-box.jpg", title: "Beauty Box Qatar", category: "SEO", result: "178K impressions · 3.95K clicks", url: "https://www.beautybox.qa/" },
     { img: "/images/seo/site-miele.jpg", proof: "/images/seo/miele.jpg", title: "Miele UAE", category: "SEO", result: "175K impressions · 2.37K clicks", url: "https://shop.miele.ae/" },
     { img: "/images/seo/site-1847-for-men.jpg", proof: "/images/seo/1847-for-men.jpg", title: "1847 For Men", category: "SEO", result: "118K impressions · 3.77K clicks", url: "https://1847formen.com/" },
+
+    // Video Editing — branded thumbnail (no image file); each opens its Drive folder
+    { title: "ADS / Product Promos", category: "Video Editing", video: true, grad: 1, url: VIDEO_FOLDER },
+    { title: "After Effects Motion Graphics", category: "Video Editing", video: true, grad: 2, url: VIDEO_FOLDER },
+    { title: "Documentary", category: "Video Editing", video: true, grad: 3, url: VIDEO_FOLDER },
+    { title: "Podcast", category: "Video Editing", video: true, grad: 1, url: VIDEO_FOLDER },
+    { title: "Real Estate", category: "Video Editing", video: true, grad: 2, url: VIDEO_FOLDER },
+    { title: "Reels & Shorts", category: "Video Editing", video: true, grad: 3, url: VIDEO_FOLDER },
+    { title: "Talking Head", category: "Video Editing", video: true, grad: 1, url: VIDEO_FOLDER },
+    { title: "Talking Head + Motion Graphics", category: "Video Editing", video: true, grad: 2, url: VIDEO_FOLDER },
+    { title: "Trailer Montage", category: "Video Editing", video: true, grad: 3, url: VIDEO_FOLDER },
+    { title: "Websites Promo", category: "Video Editing", video: true, grad: 1, url: VIDEO_FOLDER },
+    { title: "YouTube / Cashcow / Automation", category: "Video Editing", video: true, grad: 2, url: VIDEO_FOLDER },
 ];
 
 // Tab order — only categories that actually have projects are shown
-const CATEGORY_ORDER = ["Web Design", "WordPress", "Custom Code", "Shopify", "Logo Design", "Packaging", "Branding", "Funnels", "Mobile Apps", "SEO"];
+const CATEGORY_ORDER = ["Web Design", "WordPress", "Custom Code", "Shopify", "Logo Design", "Packaging", "Branding", "Video Editing", "Funnels", "Mobile Apps", "SEO"];
 const categories = ["All", ...CATEGORY_ORDER.filter((c) => projects.some((p) => p.category === c))];
-
-// Video-editing categories — each opens its Google Drive folder.
-// TODO: replace each `url` with that category's specific Drive subfolder link.
-const VIDEO_FOLDER = "https://drive.google.com/drive/folders/1V_h4znc-GN92eFm92eF4r8AQhLYv8kiw";
-const videoCategories = [
-    { name: "ADS / Product Promos", emoji: "🛍️", url: VIDEO_FOLDER },
-    { name: "After Effects Motion Graphics", emoji: "✨", url: VIDEO_FOLDER },
-    { name: "Documentary", emoji: "🎬", url: VIDEO_FOLDER },
-    { name: "Podcast", emoji: "🎙️", url: VIDEO_FOLDER },
-    { name: "Real Estate", emoji: "🏠", url: VIDEO_FOLDER },
-    { name: "Reels & Shorts", emoji: "📱", url: VIDEO_FOLDER },
-    { name: "Talking Head", emoji: "🗣️", url: VIDEO_FOLDER },
-    { name: "Talking Head + Motion Graphics", emoji: "💬", url: VIDEO_FOLDER },
-    { name: "Trailer Montage", emoji: "🎞️", url: VIDEO_FOLDER },
-    { name: "Websites Promo", emoji: "🖥️", url: VIDEO_FOLDER },
-    { name: "YouTube / Cashcow / Automation", emoji: "▶️", url: VIDEO_FOLDER },
-];
 
 export default function Portfolio() {
     const [active, setActive] = useState("All");
@@ -146,14 +146,15 @@ export default function Portfolio() {
                     <div className="pp-grid">
                         {filtered.map((p) => {
                             const isBehance = p.url?.includes('behance.net');
+                            const viewLabel = p.video ? 'Open folder ↗' : (isBehance ? 'View on Behance ↗' : 'View live site ↗');
                             return (
                                 <a
-                                    className={`pp-card ${p.category === 'SEO' ? 'pp-card--seo' : ''}`}
-                                    key={p.url}
+                                    className={`pp-card ${p.category === 'SEO' ? 'pp-card--seo' : ''} ${p.video ? 'pp-card--video' : ''}`}
+                                    key={p.title}
                                     href={p.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    aria-label={`${p.title} — ${isBehance ? 'view on Behance' : 'view live site'}`}
+                                    aria-label={`${p.title} — ${p.video ? 'open Drive folder' : (isBehance ? 'view on Behance' : 'view live site')}`}
                                 >
                                     <div className="pp-media">
                                         {p.proof && (
@@ -166,12 +167,20 @@ export default function Portfolio() {
                                                 View Proof
                                             </button>
                                         )}
-                                        <img src={p.img} alt={p.title} loading="lazy" />
+                                        {p.video ? (
+                                            <div className={`pp-vthumb pp-vthumb--${p.grad || 1}`}>
+                                                <span className="pp-vthumb-badge">Video</span>
+                                                <span className="pp-play"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                                                <span className="pp-vthumb-name">{p.title}</span>
+                                            </div>
+                                        ) : (
+                                            <img src={p.img} alt={p.title} loading="lazy" />
+                                        )}
                                         <div className="pp-overlay">
                                             <span className="pp-tag">{p.category}</span>
                                             <h3 className="pp-card-title">{p.title}</h3>
                                             {p.result && <span className="pp-result">{p.result}</span>}
-                                            <span className="pp-view">{isBehance ? 'View on Behance ↗' : 'View live site ↗'}</span>
+                                            <span className="pp-view">{viewLabel}</span>
                                         </div>
                                     </div>
                                 </a>
@@ -194,26 +203,6 @@ export default function Portfolio() {
                     </div>
                 </div>
             )}
-
-            {/* Video editing — each category opens its Drive folder */}
-            <section className="pf-video">
-                <div className="container">
-                    <div className="pf-video-head">
-                        <div className="eyebrow" style={{ fontFamily: '"Inter Tight"', marginBottom: '18px' }}>VIDEO EDITING</div>
-                        <h2>Video <span className="serif-italic">editing</span></h2>
-                        <p>Browse our video work by category — each opens the full folder of samples.</p>
-                    </div>
-                    <div className="vid-grid">
-                        {videoCategories.map((v) => (
-                            <a className="vid-card" href={v.url} target="_blank" rel="noopener noreferrer" key={v.name}>
-                                <span className="vid-ic">{v.emoji}</span>
-                                <span className="vid-name">{v.name}</span>
-                                <span className="vid-open">Open folder ↗</span>
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             <section className="final-cta portfolio-cta-banner">
                 <div className="container">
