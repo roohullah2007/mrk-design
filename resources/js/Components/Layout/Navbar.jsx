@@ -26,6 +26,7 @@ export default function Navbar() {
     const isBlog = url === '/blog' || url.startsWith('/blog/');
     const isContact = url === '/contact';
     const isGrowth = url === '/growth-partner';
+    const isPortfolio = url === '/portfolio';
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     // Close mobile menu on route change
@@ -63,7 +64,7 @@ export default function Navbar() {
                     <Link href="/services" preserveScroll={false} className={isServices ? "active" : ""}>Services</Link>
                     <Link href="/growth-partner" preserveScroll={false} className={isGrowth ? "active" : ""}>Pricing</Link>
                     <Link href="/blog" preserveScroll={false} className={isBlog ? "active" : ""}>Blog</Link>
-                    <a href={isHome ? "#testimonials" : "/#testimonials"}>Testimonials</a>
+                    <Link href="/portfolio" preserveScroll={false} className={isPortfolio ? "active" : ""}>Portfolio</Link>
                     <Link href="/contact" preserveScroll={false} className={isContact ? "active" : ""}>Contact</Link>
                 </nav>
 
@@ -91,7 +92,7 @@ export default function Navbar() {
                     <Link href="/services" preserveScroll={false} className={isServices ? "active" : ""} onClick={handleLinkClick}>Services</Link>
                     <Link href="/growth-partner" preserveScroll={false} className={isGrowth ? "active" : ""} onClick={handleLinkClick}>Pricing</Link>
                     <Link href="/blog" preserveScroll={false} className={isBlog ? "active" : ""} onClick={handleLinkClick}>Blog</Link>
-                    <a href={isHome ? "#testimonials" : "/#testimonials"} onClick={handleLinkClick}>Testimonials</a>
+                    <Link href="/portfolio" preserveScroll={false} className={isPortfolio ? "active" : ""} onClick={handleLinkClick}>Portfolio</Link>
                     <Link href="/contact" preserveScroll={false} className={isContact ? "active" : ""} onClick={handleLinkClick}>Contact</Link>
                 </nav>
                 <Link href="/contact" preserveScroll={false} className="pill primary mobile-cta" onClick={handleLinkClick}>

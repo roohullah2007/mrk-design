@@ -82,14 +82,14 @@ export default function Portfolio() {
                             img="/images/sites/doctor-home.jpg"
                             name="Doctor Home"
                             category="WordPress"
-                            style={{ flex: '1 1 0', height: '240px' }}
+                            style={{ flex: '1 1 0', height: '300px' }}
                         />
                         <Tile
                             href="https://guardmyhvac.com/"
                             img="/images/sites/guardmyhvac.jpg"
                             name="Guard My HVAC"
                             category="Custom Code"
-                            style={{ flex: '1 1 0', height: '240px' }}
+                            style={{ flex: '1 1 0', height: '300px' }}
                         />
                     </div>
                 </div>
