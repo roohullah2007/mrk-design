@@ -875,6 +875,10 @@ hr { border: none; border-top: 1px solid var(--line); margin: 0; }
 /* on hover the overlay shows the tag + view link; fade the duplicate centered name */
 .pp-card--video:hover .pp-vthumb-name, .pp-card--video:hover .pp-vthumb-badge { opacity: 0; transition: opacity 0.25s; }
 /* video cards: keep tag + open-link readable; overlay still fades in on hover */
+/* mobile: hide the text on video thumbnails (keep just the play button) */
+@media (max-width: 600px) {
+  .pp-vthumb-badge, .pp-vthumb-name { display: none; }
+}
 
 /* CTA banner reuses .final-cta styling; no video, solid BRAND PINK banner.
    Compound selector (.final-cta.portfolio-cta-banner) so it beats the later
