@@ -4562,3 +4562,47 @@ img, video, picture, canvas, svg { max-width: 100%; }
   .lp-card-stats { top: -4%; right: 0; }
   .lp-card-task { bottom: 2%; right: 0; }
 }
+
+/* Mobile: unify every section heading to match the Outcomes heading size */
+@media (max-width: 767px) {
+  .about h2,
+  .outcomes-head h2,
+  .sec-head h2,
+  .upgrade-head h2,
+  .why-new-left h2,
+  .engagements-head h2,
+  .faq-head h2,
+  .insta-head h2,
+  .final-cta h2,
+  .cat-head h2,
+  .services-detail .sec-head h2,
+  .process-band h2,
+  .addon h2,
+  .services-final-cta h2,
+  .form-aside h2,
+  .services-head .left h2,
+  .why-section h2,
+  .contact-final-cta h2 { font-size: 36px; }
+  .final-cta h2 .it { font-size: 36px; }
+}
+@media (max-width: 479px) {
+  .about h2,
+  .outcomes-head h2,
+  .sec-head h2,
+  .upgrade-head h2,
+  .why-new-left h2,
+  .engagements-head h2,
+  .faq-head h2,
+  .insta-head h2,
+  .final-cta h2,
+  .cat-head h2,
+  .services-detail .sec-head h2,
+  .process-band h2,
+  .addon h2,
+  .services-final-cta h2,
+  .form-aside h2,
+  .services-head .left h2,
+  .why-section h2,
+  .contact-final-cta h2 { font-size: 28px; }
+  .final-cta h2 .it { font-size: 28px; }
+}
