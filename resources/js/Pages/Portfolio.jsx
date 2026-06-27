@@ -83,7 +83,7 @@ const projects = [
     { title: "Talking Head + Motion Graphics", category: "Video Editing", video: true, grad: 2, url: VIDEO_FOLDER },
     { title: "Trailer Montage", category: "Video Editing", video: true, grad: 3, url: VIDEO_FOLDER },
     { title: "Websites Promo", category: "Video Editing", video: true, grad: 1, url: VIDEO_FOLDER },
-    { title: "YouTube / Cashcow / Automation", category: "Video Editing", video: true, grad: 2, url: VIDEO_FOLDER },
+    { title: "YouTube / Cashcow / Automation", category: "Video Editing", video: true, grad: 2, url: "https://drive.google.com/drive/folders/1S-3aPl2wjzuec9tVdfBc_oYviplSD646" },
 ];
 
 // Tab order — only categories that actually have projects are shown
