@@ -30,6 +30,7 @@
         @endphp
 
         <!-- Favicon (cache-busted by file mtime so updates show immediately) -->
+        <link rel="icon" href="{{ asset('favicon.ico') }}?v={{ $faviconV }}" sizes="any">
         <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}?v={{ $faviconV }}">
         <link rel="shortcut icon" type="image/png" href="{{ asset('favicon.png') }}?v={{ $faviconV }}">
         <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}?v={{ $faviconV }}">
