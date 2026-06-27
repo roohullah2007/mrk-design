@@ -81,8 +81,8 @@ const projects = [
     { title: "Reels & Shorts", category: "Video Editing", video: true, grad: 3, url: VIDEO_FOLDER },
     { title: "Talking Head", category: "Video Editing", video: true, grad: 1, url: VIDEO_FOLDER },
     { title: "Talking Head + Motion Graphics", category: "Video Editing", video: true, grad: 2, url: VIDEO_FOLDER },
-    { title: "Trailer Montage", category: "Video Editing", video: true, grad: 3, url: VIDEO_FOLDER },
-    { title: "Websites Promo", category: "Video Editing", video: true, grad: 1, url: VIDEO_FOLDER },
+    { title: "Trailer Montage", category: "Video Editing", video: true, grad: 3, url: "https://drive.google.com/drive/folders/1-UoJp3zcBvS0uB1w99RU95pjsz43Y9Os" },
+    { title: "Websites Promo", category: "Video Editing", video: true, grad: 1, url: "https://drive.google.com/drive/folders/14u82Eo81yH5nvcDPK1ZAHM2OYSwfFz2E" },
     { title: "YouTube / Cashcow / Automation", category: "Video Editing", video: true, grad: 2, url: "https://drive.google.com/drive/folders/1S-3aPl2wjzuec9tVdfBc_oYviplSD646" },
 ];
 
