@@ -1726,20 +1726,21 @@ img, video, picture, canvas, svg { max-width: 100%; }
 /* Pricing — reuses homepage .pack / .pack-grid card design */
 .lp-pricing-section { background: var(--bg); padding: 96px 0; }
 .lp-pack-per { font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; font-weight: 700; opacity: 0.55; margin-left: 3px; letter-spacing: 0; }
-/* pricing trust ticks — prominent pill badges */
-.lp-price-ticks { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 30px; }
+/* pricing trust ticks — prominent pill badges, single row */
+.lp-price-ticks { display: flex; flex-wrap: nowrap; justify-content: center; gap: 12px; margin-top: 30px; }
 .lp-price-ticks span {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center; gap: 9px; white-space: nowrap;
   background: #fff; border: 1.5px solid var(--ink); border-radius: 999px;
-  padding: 11px 22px; font-family: 'DM Sans', sans-serif; font-size: 15.5px;
+  padding: 11px 20px; font-family: 'DM Sans', sans-serif; font-size: 15px;
   font-weight: 700; color: var(--ink); box-shadow: 0 4px 14px rgba(0,0,0,0.05);
 }
 .lp-price-ticks .lp-check {
   width: 22px; height: 22px; padding: 4px; box-sizing: border-box; flex-shrink: 0;
   background: var(--accent); color: #fff; border-radius: 50%;
 }
-@media (max-width: 600px) {
-  .lp-price-ticks { gap: 9px; }
+/* phones: allow wrapping so they don't overflow */
+@media (max-width: 767px) {
+  .lp-price-ticks { flex-wrap: wrap; gap: 9px; }
   .lp-price-ticks span { font-size: 13.5px; padding: 9px 16px; }
 }
 /* "Everything in X, plus" label above a plan's feature list */
