@@ -40,11 +40,13 @@ const plans = [
         blurb: 'Just getting started? Get a polished online presence — logo, website, and social graphics — without the big price tag.',
         features: [
             'Logo design + brand colour palette',
-            '3-page responsive website (WordPress)',
+            '5-page responsive website (WordPress)',
+            'CMS setup',
             '4 social media graphics / month',
             '1 landing page design',
             '2 revision rounds per deliverable',
             'Email support',
+            '15 days support',
         ],
     },
     {
