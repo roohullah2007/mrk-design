@@ -36,19 +36,44 @@ const included = [
 
 const plans = [
     {
-        emoji: '🚀', name: 'Growth', price: '$200', featured: true, meta: 'MOST POPULAR · STARTER',
-        blurb: 'Perfect for startups and growing businesses.',
-        features: ['Unlimited Requests*', 'One Active Task at a Time', 'Unlimited Revisions', '2–3 Day Average Delivery', 'WordPress Support', 'UI/UX Design', 'Graphic Design', 'Basic SEO', 'Website Maintenance', 'Dedicated Project Manager'],
+        emoji: '🌱', name: 'Starter', price: '$200', meta: 'STARTER', cta: 'Start for $200',
+        blurb: 'Just getting started? Get a polished online presence — logo, website, and social graphics — without the big price tag.',
+        features: [
+            'Logo design + brand colour palette',
+            '3-page responsive website (WordPress)',
+            '4 social media graphics / month',
+            '1 landing page design',
+            '2 revision rounds per deliverable',
+            'Email support',
+        ],
     },
     {
-        emoji: '📈', name: 'Growth Plus', price: '$450', meta: 'SCALE UP',
-        blurb: 'Everything in Growth, plus:',
-        features: ['Priority turnaround', 'Two active requests', 'Shopify support', 'Conversion optimization', 'Landing page development', 'Monthly strategy call'],
+        emoji: '🚀', name: 'Growth', price: '$500', featured: true, meta: 'MOST POPULAR', cta: 'Start for $500',
+        blurb: 'The most chosen plan. More deliverables, a full funnel, and social content to keep your brand active every month.',
+        plus: 'Everything in Starter, plus',
+        features: [
+            '5-page website + mobile optimisation',
+            'Sales funnel design + GoHighLevel setup',
+            '10 social media graphics / month',
+            '2 short-form video edits / month',
+            'SEO on-page basics',
+            'Monthly strategy call (30 min)',
+            'Unlimited revisions',
+        ],
     },
     {
-        emoji: '👑', name: 'Business Pro', price: '$850', meta: 'FULL SERVICE',
-        blurb: 'Everything in Growth Plus, plus:',
-        features: ['Unlimited active revisions', 'Advanced SEO', 'Funnel design', 'Custom development hours', 'Monthly performance reports', 'Priority support'],
+        emoji: '👑', name: 'Pro', price: '$999', meta: 'FULL SERVICE', cta: 'Start for $999',
+        blurb: 'Full creative output every month — ideal for brands actively running ads, content, and growing their audience fast.',
+        plus: 'Everything in Growth, plus',
+        features: [
+            'Shopify or WooCommerce store setup',
+            '20 social media graphics / month',
+            '4 reels / video edits per month',
+            'Google & Meta ads creatives',
+            'Email sequence design (up to 5)',
+            'Bi-weekly calls + dedicated PM',
+            'Monthly performance report',
+        ],
     },
 ];
 
@@ -209,9 +234,15 @@ export default function GrowthPartner() {
             <section className="lp-pricing-section" id="pricing">
                 <div className="container">
                     <div className="lp-head">
-                        <div className="eyebrow" style={{ fontFamily: '"Inter Tight"' }}>SIMPLE PRICING</div>
-                        <h2 className="lp-h2">One subscription. <span className="serif-italic">Scales with you.</span></h2>
-                        <p className="lp-why-sub">Starting at $200/month. No contracts, cancel anytime.</p>
+                        <div className="eyebrow" style={{ fontFamily: '"Inter Tight"' }}>PRICING</div>
+                        <h2 className="lp-h2">Premium design. <span className="serif-italic">Prices you'll love.</span></h2>
+                        <p className="lp-why-sub">No big upfront costs. Just a simple monthly plan — pick what fits your stage and scale up when you're ready.</p>
+                        <div className="lp-price-ticks">
+                            <span><Check /> No contracts</span>
+                            <span><Check /> Cancel anytime</span>
+                            <span><Check /> Source files yours</span>
+                            <span><Check /> Results in 7 days</span>
+                        </div>
                     </div>
                     <div className="pack-grid">
                         {plans.map((p) => (
@@ -224,19 +255,20 @@ export default function GrowthPartner() {
                                     <div className="starts">{p.blurb}</div>
                                 </div>
                                 <div className="pack-bottom">
+                                    {p.plus && <div className="lp-pack-plus">{p.plus}</div>}
                                     <ul>
                                         {p.features.map((f) => (
                                             <li key={f}><span className="check"><MiniCheck /></span>{f}</li>
                                         ))}
                                     </ul>
                                     <Link href="/contact" preserveScroll={false} className="cta">
-                                        Get Started<span className="arrow"><ArrowIcon /></span>
+                                        {p.cta || 'Get Started'}<span className="arrow"><ArrowIcon /></span>
                                     </Link>
                                 </div>
                             </div>
                         ))}
                     </div>
-                    <p className="lp-compare-note">*Unlimited requests subject to a fair usage policy to ensure consistent service for all clients.</p>
+                    <p className="lp-compare-note">All plans are billed monthly. No contracts, no hidden fees — cancel anytime. Not sure where to start? <Link href="/contact" className="lp-note-link">Book a free 15-min call</Link> and we'll guide you.</p>
                 </div>
             </section>
 

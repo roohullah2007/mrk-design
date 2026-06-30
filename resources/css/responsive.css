@@ -1726,6 +1726,15 @@ img, video, picture, canvas, svg { max-width: 100%; }
 /* Pricing — reuses homepage .pack / .pack-grid card design */
 .lp-pricing-section { background: var(--bg); padding: 96px 0; }
 .lp-pack-per { font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; font-weight: 700; opacity: 0.55; margin-left: 3px; letter-spacing: 0; }
+/* pricing trust ticks */
+.lp-price-ticks { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; margin-top: 22px; }
+.lp-price-ticks span { display: inline-flex; align-items: center; gap: 7px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink); }
+.lp-price-ticks .lp-check { width: 16px; height: 16px; color: var(--accent); }
+/* "Everything in X, plus" label above a plan's feature list */
+.lp-pack-plus { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; margin-bottom: -8px; }
+.pack.dark .lp-pack-plus { color: var(--accent-soft); opacity: 0.9; }
+/* "book a free call" link in pricing fineprint */
+.lp-note-link { color: var(--accent); text-decoration: underline; }
 
 /* Pricing (legacy — kept harmless) */
 .lp-pricing { background: var(--ink); padding: 96px 0; }
