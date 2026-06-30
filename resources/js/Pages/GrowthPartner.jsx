@@ -238,7 +238,7 @@ export default function GrowthPartner() {
                 <div className="container">
                     <div className="lp-head">
                         <div className="eyebrow" style={{ fontFamily: '"Inter Tight"' }}>PRICING</div>
-                        <h2 className="lp-h2">Premium design. <span className="serif-italic">Prices you'll love.</span></h2>
+                        <h2 className="lp-h2">Premium design.<br /><span className="serif-italic">Prices you'll love.</span></h2>
                         <p className="lp-why-sub">No big upfront costs. Just a simple monthly plan — pick what fits your stage and scale up when you're ready.</p>
                         <div className="lp-price-ticks">
                             <span><Check /> No contracts</span>
