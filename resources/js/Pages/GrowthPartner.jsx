@@ -68,6 +68,7 @@ const plans = [
         blurb: 'Full creative output every month — ideal for brands actively running ads, content, and growing their audience fast.',
         plus: 'Everything in Growth, plus',
         features: [
+            '12-page custom website',
             'Shopify or WooCommerce store setup',
             '20 social media graphics / month',
             '4 reels / video edits per month',
