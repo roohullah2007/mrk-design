@@ -54,7 +54,7 @@ const plans = [
         blurb: 'The most chosen plan. More deliverables, a full funnel, and social content to keep your brand active every month.',
         plus: 'Everything in Starter, plus',
         features: [
-            '5-page website + mobile optimisation',
+            '7-page website + mobile optimisation',
             'Sales funnel design + GoHighLevel setup',
             '10 social media graphics / month',
             '2 short-form video edits / month',
