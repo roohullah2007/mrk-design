@@ -251,7 +251,7 @@ export default function GrowthPartner() {
                         {plans.map((p) => (
                             <div className={`pack ${p.featured ? 'dark' : ''}`} key={p.name}>
                                 {p.featured && <div className="blob"></div>}
-                                <div className="meta">{p.emoji} {p.meta}</div>
+                                <div className="meta">{p.meta}</div>
                                 <h3>{p.name}</h3>
                                 <div>
                                     <div className="price">{p.price}<span className="lp-pack-per">/month</span></div>
